@@ -1,0 +1,53 @@
+import React, { useEffect, useState } from 'react';
+
+const Header = () => {
+  const titles = ["Software Engineer", "Web Developer", "UI/UX Developer", "Frontend Developer", "Backend Developer", "DB Administrator"];
+  const skillsForTitles = [
+    "Java - Git - Python - Agile Methodologies",
+    "HTML5 - CSS - JavaScript - Responsive Design",
+    "Bootstrap - Materialize - SASS - Sketch - Figma - Adobe XD",
+    "React - Vue - Angular - Webpack - Context API",
+    "Node.js - Express - Django - RESTful APIs",
+    "MongoDB - MySQL - PostgreSQL - AWS", 
+  ];
+  
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [glitchTrigger, setGlitchTrigger] = useState(false);
+    useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentIndex(prevIndex => (prevIndex + 1) % titles.length);
+      setGlitchTrigger(true);
+      setTimeout(() => setGlitchTrigger(false), 500); 
+    }, 5000);
+
+    return () => clearInterval(intervalId); 
+  }, []);
+
+  return (
+    <header className="header">
+   
+    <div className="glitch" data-text="Brian Taylor" style={{ fontSize: '30px' }}>Brian Taylor</div>
+    <br />
+    <div className="glitch" data-text="Full Stack Developer" style={{ fontSize: '3vw' }}>Full Stack Developer</div>
+    <hr />
+      <div className={`glitch ${glitchTrigger ? 'glitch-effect' : ''}`} id="glitchTitle" data-text={titles[currentIndex]}>
+        {titles[currentIndex]}
+      </div>
+      <br />
+      <div className="glitch" style={{ fontSize: '2.08333vw', color:'white' }} data-text={skillsForTitles[currentIndex]}>
+        {skillsForTitles[currentIndex]}
+      </div>
+      <div className="static-background"></div>
+      <div className="scanlines"></div>
+        <div className="noise"></div>
+     
+    {/* <h2 className={`fadeInUp ${titleAnimation}`}>UI/UX Designer</h2> */}
+
+
+    
+    </header>
+    
+);
+};
+
+export default Header;
