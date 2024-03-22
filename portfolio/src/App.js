@@ -10,13 +10,16 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <section id="intro"><Intro /></section>
       <main>
-        {/* <IntroSection />
-        <AboutSection />
-        <ProjectsSection />
-        <ContactSection /> */}
+      <section id="about"><About /></section>
+        <section id="projects"><Projects /></section>
+        <section id="contact"><Contact /></section>
+
       </main>
-      {/* <Footer /> */}
+      <Footer />
+      
+
     </div>
   );
 }

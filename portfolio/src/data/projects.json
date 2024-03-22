@@ -1,0 +1,41 @@
+ [ 
+    {
+      "id": 1,
+      "title": "SellOut",
+      "description": "A electronic commerce website that allows users to buy and review products.",
+      "imageUrl": "https://github.com/Quantumcode9/Sellout-Client/raw/main/readme/tvs.png",
+      "videoUrl": "/Selloutvid.mov",
+      "technologies": ["React", "MongoDb", "Node.js", "Express"],
+      "link": "https://sellout-final.netlify.app/",
+      "github": "https://github.com/Quantumcode9/Sellout-Client",
+      "model": "/models/Laptop-Iphone.glb",
+      "challenges:": "I found it challenging to implement the review feature. I had to create a new route and model for the reviews.", 
+      "solution": "I created a new route and model for the reviews. I also had to create a new component for the reviews. I then had to connect the reviews to the product page"
+    }, 
+    {
+      "id": 2,
+      "title": "Gnosis: Tv Show Tracker App",
+      "description": "An app that helps you keep track of your favorite TV shows.",
+      "imageUrl": "https://github.com/Quantumcode9/Project2-Gnosisapp/raw/main/Photos/Screenshot-Show.png",
+      "videoUrl": "",
+      "technologies": ["Mongo", "Node.js", "Express"],
+      "link": "https://gnosis-app.fly.dev",
+      "github": "https://github.com/Quantumcode9/Project2-Gnosisapp",
+      "model": "/models/Gnosis-model.glb"
+
+    },
+    {
+      "id": 3,
+      "title": "Event Planner",
+      "description": "An app that helps you plan events.",
+      "imageUrl": "https://github.com/Quantumcode9/whats-happening/raw/main/readme/photos/hub.png",
+      "technologies": ["Django", "Python", "Postgres","AWS S3"],
+      "videoUrl": "",
+      "link": "https://whats-happening.onrender.com",
+      "model": "/models/Whats-Happening.glb",
+      "github": "https://github.com/Quantumcode9/whats-happening?tab=readme-ov-file"
+    }
+
+    
+
+  ]

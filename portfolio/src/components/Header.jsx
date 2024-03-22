@@ -17,14 +17,14 @@ const Header = () => {
     const intervalId = setInterval(() => {
       setCurrentIndex(prevIndex => (prevIndex + 1) % titles.length);
       setGlitchTrigger(true);
-      setTimeout(() => setGlitchTrigger(false), 500); 
+      setTimeout(() => setGlitchTrigger(false), 1000); 
     }, 5000);
 
     return () => clearInterval(intervalId); 
   }, []);
 
   return (
-    <header className="header">
+    <header className="header" style={{ minHeight: '80vh', position: 'relative', overflow: 'hidden' }}>
    
     <div className="glitch" data-text="Brian Taylor" style={{ fontSize: '30px' }}>Brian Taylor</div>
     <br />
