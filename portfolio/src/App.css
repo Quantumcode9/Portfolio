@@ -1,40 +1,43 @@
 
 html {
+  font-size: 16px;
+  font-family: 'Jura', sans-serif;
   scroll-behavior: smooth;
 }
 
+
 html, body, #root{
-  margin: 0;
+
   padding: 0;
+  margin: 0 auto;
+
 }
 
 .App {
   text-align: center;
-
   min-height: 100vh;
   width: 100%;
+  max-width: 1500px; 
+  margin: 0 auto; 
   display: flex;
   flex-direction: column;
-
-
 }
 
 .card {
-  margin: 20px;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   border-radius: 8px;
   background-color: #242424;
   color: white;
-  margin: 1em auto;
+
   padding: 1em;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   border-radius: 5px;
 }
 
-.card:hover {
-  transform: scale(1.01);
-}
+
 
 
 
@@ -43,6 +46,7 @@ html, body, #root{
   top: 0;
   text-align: center;
   background-color: #b5b5b5; 
+  overflow: hidden;
 }
 
 
@@ -207,14 +211,6 @@ div {
 /* The static code */
 
 
-
-
-
-
-
-
-
-
 .static-background {
   position: absolute;
   opacity: 0.1;
@@ -348,12 +344,14 @@ div {
 
 #projects {
   text-align: center;
+  background-color: #242424;
 }
 
 .projects-container {
+  
   display: flex;
   flex-wrap: wrap; 
-  justify-content: center;
+  justify-content: space-between;
   gap: 20px;
   padding: 20px;
 }
@@ -361,14 +359,18 @@ div {
 .project-item {
  
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  margin: 10px;
   padding: 10px;
   border-radius: 8px;
   transition: transform 0.2s;
   background-color: #242424;
 }
 
-
+.project-title {
+  margin-top: 10px;
+  font-size: 1.5em;
+  color: white;
+  text-transform: uppercase;
+}
 
 .project-image {
   width: 100%;
@@ -387,17 +389,28 @@ div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px; 
+  gap: 10px; 
   background-color: #242424;
+  height: 100%;
 }
 
 .about-me-container {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
+ 
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
   padding: 20px;
-  height: 90vh;
+  height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .about-me-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
 }
 
 .row {
@@ -424,8 +437,8 @@ div {
 } 
 
 .about-me-image {
-  width: 250px; 
-  height: 250px;
+  width: 80%;
+  height: auto;
   margin-bottom: 1em;
   transition: border-radius 0.3s;
   border: 5px solid rgb(223, 191, 191);
@@ -435,8 +448,6 @@ div {
   border-radius: 50%;
 }
 
-
-
 .about-me-card {
   display: flex;
   align-items: center;
@@ -445,13 +456,32 @@ div {
   background-color: #0202026e;
   border-radius: 10px;
   box-shadow: -1rem 0 1rem #000;
-  width: 50%;
+  width: 100%;
   color: white;
   font-size: 1.1em;
   overflow: hidden;
  
   transition: transform 0.2s;
 }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .about-me-card {
+    width: 100%;
+  }
+
+  .about-me-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-me-image {
+    width: 100%;
+    height: auto;
+  
+  }
+}
+
 .profile-card {
   display: flex;
   flex-direction: column;
@@ -460,7 +490,7 @@ div {
 
   border-radius: 8px;
   background-color: #242424;
-  width: 50%;
+  width: 100%;
   color: white;
   transition: transform 0.2s;
 }
@@ -492,13 +522,23 @@ div {
   background-color: #b5b5b5; 
 }
 
+.about-card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+  margin: 0 auto;
 
-
+}
 
 
 
 
 /* Card Flipping*/
+
+
 
 .card-description {
   display: flex;
@@ -512,23 +552,18 @@ div {
   transition: transform 0.2s;
 }
 
-
-
 .flipped {
   transform: rotateY(180deg);
-
 }
 
 .card-flipper {
   perspective: 1000px;
-  width: 260px; 
-  height: 364px; 
+  width: 100%; 
+  height: 100%; 
   display: flex; 
   justify-content: center; 
   align-items: center; 
 }
-
-
 
 .card-content {
   position: relative;
@@ -537,9 +572,8 @@ div {
   color: #dcdcdc;
   transform-style: preserve-3d;
   transition: transform 0.8s;
-  width: 100%;
-  height: 300px;
-  cursor: pointer;
+  width: 100%; 
+  height: 100%; 
 }
 
 .card-face {
@@ -550,14 +584,60 @@ div {
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  height: 100vw;
-  width: 60vw;
-  max-height: 364px;
-  max-width: 260px;
+  height: 100%; 
+  width: 100%;
   background-color: #0202026e;
   border-radius: 10px;
   box-shadow: -1rem 0 3rem #000;
+  overflow: hidden;
+
 }
+
+
+  
+
+  .card-flipper {
+    width: 16rem; 
+    height: 24rem; 
+  }
+
+  .card-content {
+    width: 16rem;
+    height: 24rem; 
+  }
+
+  .card-face {
+    width: 16rem; 
+    height: 24rem;
+  }
+
+  @media screen and (max-width: 768px)
+  
+{
+
+  .card-flipper {
+ margin: 0 auto;
+
+  }
+
+  .card-content {
+    width: 100%;
+    height: 100%; 
+
+  }
+
+  .card-face {
+    width: 100%; 
+    height: 100%;
+
+  }
+  
+
+  }
+
+
+
+
 
 .card-face .fa-chevron-circle-right {
   position: absolute;
@@ -623,7 +703,7 @@ div {
   gap: 20px; 
   background-color: #242424;
   color: white;
-  height: 90vh;
+  height: 100%;
   width: 100%;
 }
 
@@ -641,14 +721,15 @@ div {
   color: white;
   box-shadow: 0 4px 8px rgba(35, 35, 35, 0.1);
   transition: transform 0.2s;
-  height: 90vh;
+  height: 100%;
   width: 100%;
+  margin-bottom: 70px;
 
 }
 
 
 
-.contact-form {
+#contact-form {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -660,20 +741,20 @@ div {
   padding: 20px;
 }
 
-.contact-form input, .contact-form textarea {
+#contact-form input, #contact-form textarea {
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #b5b5b5;
   background-color: #242424;
   color: white;
-  width: 80%;
+  width: 60%;
 }
 
-.contact-form input:focus, .contact-form textarea:focus {
+#contact-form input:focus, #contact-form textarea:focus {
   border: 1px solid #242424;
 }
 
-.contact-form button {
+#contact-form button {
   padding: 10px;
   border-radius: 5px;
   border: none;
@@ -682,24 +763,41 @@ div {
   cursor: pointer;
 }
 
+@media screen and (max-width: 768px) {
+  #contact-form input, #contact-form textarea {
+    width: 100%;
+    padding: 0;
+
+  }
+  
+}
+
 
 /* SOCIAL MEDIA ICONS */
 
-.social-media-icons {
+.contact-links {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
   gap: 20px;
 }
-
-.social-media-icon {
+.contact-links a {
   color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+.contact-links a:hover {
+  color: #008dd4;
+}
+
+.fa-github, .fa-linkedin, .fa-twitter {
   font-size: 2em;
   transition: color 0.3s;
+  color: white;
 }
 
-.social-media-icon:hover {
-  color: #b5b5b5;
-}
+
 
 
 
@@ -718,8 +816,11 @@ div {
 
 .footer {
   position: fixed;
-  left: 0;
+
   bottom: 0;
+  max-width: 1500px; 
+
+  margin: 0 auto;
   width: 100%;
   height: 10vh;
   background-color: #333; 

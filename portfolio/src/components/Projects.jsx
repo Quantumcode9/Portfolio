@@ -8,11 +8,13 @@ const Projects = () => {
     <div className="projects-header">
     <div className="glitch" data-text="Projects" style={{ fontSize: '30px' }}>Projects</div>
       </div>
+    
     <div>
       {projects.map(project => (
         <ProjectItem key={project.id} project={project} />
       ))}
     </div>
+
     </>
   );
 };

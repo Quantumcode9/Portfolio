@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import contact from '../data/contact.json';
+
 const Contact = () => {
 
     const [flippedId, setFlippedId] = useState(null);
@@ -8,42 +10,62 @@ const Contact = () => {
     };
     
 
-const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: '',
+    });
+
+
+const [errors, setErrors] = useState({
     name: '',
     email: '',
     message: '',
 });
 
+    const [formStatus, setFormStatus] = useState({
+    submitting: false,
+    success: false,
+    error: false
+    });
+
 const handleChange = (e) => {
 setFormData({ ...formData, [e.target.name]: e.target.value });
+
+
+switch (e.target.name) {
+case 'name':
+    setErrors({ ...errors, name: e.target.value ? '' : 'Name is required' });
+    break;
+case 'email':
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    setErrors({ ...errors, email: emailRegex.test(e.target.value) ? '' : 'Email is not valid' });
+    break;
+case 'message':
+    setErrors({ ...errors, message: e.target.value ? '' : 'Message is required' });
+    break;
+default:
+    break;
+}
 };
 
 const handleSubmit = async (e) => {
 e.preventDefault();
+setFormStatus({ ...formStatus, submitting: true });
 
-const response = await fetch('https://example.com/api/contact', {
-    method: 'POST',
-    headers: {
-    'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(formData),
-});
-
-if (response.ok) {
-    console.log('Message sent successfully');
-} else {
-    console.log('Message sending failed');
+if (!errors.name && !errors.email && !errors.message) {
 }
 };
 
+
+
 return (
-    <>
+<>
     <div className="projects-header">
     <div className="glitch" data-text="Contact" style={{ fontSize: '30px' }}>Contact</div>
         </div>
     
     <div className="contact-content">
-
     <div className='row'>
             <div className='col'>
         <div className="card-flipper" onClick={() => handleFlip(2)}>
@@ -57,10 +79,11 @@ return (
     {/* Back face of the card */}
     <div className="card-face card-face-back">
     <h2>Contact Me</h2>
-    <p>Email:
-    <a href="mailto:Bataylor@gmail.com"></a>
-    </p>
-    <p>Phone: 555-555-5555</p>
+    <p><i className="fas fa-envelope"></i></p>
+    <p><i className="fas fa-map-marker-alt"></i></p>
+    <p><i className="fas fa-phone"></i></p>
+
+    
     </div>
     </div>
     </div>
@@ -76,8 +99,10 @@ return (
     </div>
     <div className="card-face card-face-back">
     <h2>Connect with Me</h2>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/bataylor">linkedin.com/in/bataylor</a></p>
-    <p>GitHub: <a href="https://github.com/bataylor">github.com/bataylor</a></p>
+    <div className="contact-links">
+    <p><i className="fab fa-linkedin"></i>: <a href={contact.linkedin}>LinkedIn</a></p>
+    <p><i className="fab fa-github"></i>: <a href={contact.github}>GitHub</a></p>
+    </div>
     </div>
     </div>
     </div>
@@ -85,32 +110,35 @@ return (
 
     <div className='col'>
         <div className="contact-form-card">
-    <h2>Contact Form</h2>
-    <p>Send me a message using the form below:</p>
+            <h2>Contact Form</h2>
+                <p>Send me a message using the form below:</p>
+        </div>
+        <form id="contact-form" name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}> 
+            <div>
+                <label htmlFor="name">Name:</label><br />
+                <input type="text" id="name" name="name" onChange={handleChange} /><br />
+                {errors.name && <p>{errors.name}</p>}
+            </div>
+            <div>
+                <label htmlFor="email">Email:</label><br />
+                <input type="text" id="email" name="email" onChange={handleChange} /><br />
+                {errors.email && <p>{errors.email}</p>}
+            </div>
+            <div>
+                <label htmlFor="message">Message:</label><br />
+                <textarea id="message" name="message" onChange={handleChange} /><br />
+                {errors.message && <p>{errors.message}</p>}
+            </div>
+            <div>
+                <input type="submit" value="Submit" />
+            </div>
+        </form>
+        {formStatus.submitting && <p>Submitting...</p>}
+    {formStatus.success && <p>Thanks for your message! I'll will get back to you soon.</p>}
+    {formStatus.error && <p>Sorry, there was a problem with your submission. Please try again, or contact me through LinkedIn or GitHub.</p>}
     </div>
-    <div className="contact-form">
-    <h2>Message Me</h2>
-    <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label><br />
-        <input type="text" id="name" name="name" onChange={handleChange} /><br />
-        <label htmlFor="email">Email:</label><br />
-        <input type="text" id="email" name="email" onChange={handleChange} /><br />
-        <label htmlFor="message">Message:</label><br />
-        <textarea id="message" name="message" onChange={handleChange} /><br />
-        <input type="submit" value="Submit" />
-    </form>
     </div>
-    </div>
-    </div>
-
-    </>
-
-
-
-
-
-
-
+</>
 
 );
 }

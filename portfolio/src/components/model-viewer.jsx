@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react';
 
 
 
-const ModelViewer = ({ modelUrl }) => {
+const ModelViewer = ({ modelUrl, handleClick }) => {
     const modelRef = useRef(null);
     useEffect(() => {
         const modelElement = modelRef.current;
@@ -17,7 +17,7 @@ const ModelViewer = ({ modelUrl }) => {
         return () => {
             modelElement.removeEventListener('click', handleClick);
         }
-    }, []);
+      }, [handleClick]);
 
 
 
