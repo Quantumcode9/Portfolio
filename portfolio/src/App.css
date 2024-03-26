@@ -17,7 +17,7 @@ html, body, #root{
   text-align: center;
   min-height: 100vh;
   width: 100%;
-  max-width: 1500px; 
+  max-width: 100%;
   margin: 0 auto; 
   display: flex;
   flex-direction: column;
@@ -391,8 +391,10 @@ div {
 }
 
 .card-body {
+  margin: 1em 0;
   display: grid;
   grid-template-rows: auto 1fr; 
+  line-height: 1.6;
   gap: 1rem;
 }
 
@@ -443,10 +445,23 @@ div {
 
 
 .project-card-tech {
-  font-style: italic;
+  font-weight: lighter;
   font-size: 1.2rem;
   text-transform: capitalize;
+  color: #f1aeb5;
 
+}
+
+
+.video-button {
+  margin: .5em 0;
+  background-color: #242424;
+  color: #f1aeb5;
+  border: 1px solid white;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 
@@ -477,6 +492,7 @@ div {
   align-items: center;
   gap: 10px; 
   background-color: #242424;
+  overflow: hidden;
   height: 100%;
 }
 
@@ -484,6 +500,7 @@ div {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+
  
   justify-content: center;
   gap: 10px;
@@ -528,10 +545,16 @@ div {
   margin-bottom: 1em;
   transition: border-radius 0.3s;
   border: 5px solid rgb(223, 191, 191);
+  filter: brightness(0.8);
+  transition: filter 0.3s;
+
 }
 
 .about-me-image:hover {
-  border-radius: 50%;
+  filter: brightness(0.8);
+  filter: grayscale(100%);
+  transition: filter 0.3s;
+  
 }
 
 .about-me-card {
@@ -550,7 +573,7 @@ div {
   transition: transform 0.2s;
 }
 
-/* Responsive styles */
+
 @media (max-width: 768px) {
   .about-me-card {
     width: 100%;
@@ -562,9 +585,13 @@ div {
   }
 
   .about-me-image {
-    width: 100%;
+    width: 60%;
     height: auto;
   
+  }
+  .about-me-image:hover {
+    filter: brightness(0.8);
+    filter: none;
   }
 }
 
@@ -573,16 +600,17 @@ div {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
+  font-family: 'Jura', sans-serif;
+  font-style: italic;
   border-radius: 8px;
   background-color: #242424;
   width: 100%;
-  color: white;
+  color: rgb(240, 240, 240);
   transition: transform 0.2s;
 }
 
 .about-me-description {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   font-size: 1.1em;
   line-height: 1.6;
@@ -595,13 +623,14 @@ div {
   padding: 10px 20px;
   border-radius: 2px;
   background-color: #161616;
-  color: #fff;
+  color:#f1aeb5a7;
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
 .about-me-resume:hover {
   background-color: #b5b5b5; 
+  color: #242424;
 } 
 
 .about-me-resume:active {
@@ -624,7 +653,12 @@ div {
 
 /* Card Flipping*/
 
-
+.card-face h2 {
+  font-size: 1.5em;
+  color: white;
+  text-transform: uppercase;
+  top: 0;
+}
 
 .card-description {
   display: flex;
@@ -720,10 +754,6 @@ div {
   
 
   }
-
-
-
-
 
 .card-face .fa-chevron-circle-right {
   position: absolute;
@@ -1069,20 +1099,54 @@ div {
   position: fixed;
 
   bottom: 0;
-  max-width: 1500px; 
-
+  max-width: 100%;
+  font-family: 'Arial', sans-serif;
   margin: 0 auto;
   width: 100%;
   height: 10vh;
-  background-color: #333; 
-  color: white; 
-  display: flex;
-  justify-content: center; 
-  align-items: center; 
+  align-items: center;
+  background-color: #b5b5b5;
+  color: #ffffff;
+
 }
 
-.footer-content a {
-  margin: 0 15px; 
-  color: white;
-  text-decoration: none; 
-} 
+
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 15px;
+      
+      &:hover, &:focus {
+       color: #f1aeb5;
+      }
+    }
+
+    .footer-social {
+      a {
+        display: inline-block;
+        margin: 0 10px;
+        font-size: 1.5em;
+        
+        &:hover, &:focus {
+          color:#f1aeb5;
+
+        }
+      }
+    }
+
+    .logo {
+      img {
+        width: 5rem;
+        height: 5rem;
+        margin: 0 15px;
+        filter:grayscale(100%);
+
+
+      }
+    }
+  }

@@ -21,6 +21,7 @@ return (
 <div className="container-fluid">
 
 
+
     <div className="about-me-header">
         <div className="glitch" data-text="About Me" style={{ fontSize: '30px' }}>About Me</div>
     </div>
