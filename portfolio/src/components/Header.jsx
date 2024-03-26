@@ -13,15 +13,18 @@ const Header = () => {
   
   const [currentIndex, setCurrentIndex] = useState(0);
   const [glitchTrigger, setGlitchTrigger] = useState(false);
-    useEffect(() => {
+  
+  const titlesLength = titles.length;
+
+  useEffect(() => {
     const intervalId = setInterval(() => {
-      setCurrentIndex(prevIndex => (prevIndex + 1) % titles.length);
+      setCurrentIndex(prevIndex => (prevIndex + 1) % titlesLength);
       setGlitchTrigger(true);
       setTimeout(() => setGlitchTrigger(false), 1000); 
     }, 5000);
 
     return () => clearInterval(intervalId); 
-  }, []);
+  }, [titlesLength]);
 
   return (
     <header className="header" style={{ minHeight: '80vh', position: 'relative', overflow: 'hidden' }}>
