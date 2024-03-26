@@ -50,13 +50,30 @@ default:
 };
 
 const handleSubmit = async (e) => {
-e.preventDefault();
-setFormStatus({ ...formStatus, submitting: true });
+    e.preventDefault();
+    setFormStatus({ ...formStatus, submitting: true });
 
-if (!errors.name && !errors.email && !errors.message) {
-}
+    if (!errors.name && !errors.email && !errors.message) {
+        const form = new FormData();
+        form.append('form-name', 'contact');
+        form.append('name', formData.name);
+        form.append('email', formData.email);
+        form.append('message', formData.message);
+
+        try {
+            await fetch('/', {
+                method: 'POST',
+                headers: { 'Accept': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(form).toString()
+            });
+
+            setFormData({ name: '', email: '', message: '' });
+            setFormStatus({ submitting: false, success: true, error: false });
+        } catch (error) {
+            setFormStatus({ submitting: false, success: false, error: true });
+        }
+    }
 };
-
 
 
 return (
@@ -114,7 +131,6 @@ return (
 
         <div className="contact-form-container">
                 <p>Send me a message using the form below:</p>
-  
         <div className="contact-card">
         <form id="contact-form" name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}> 
             <div>
