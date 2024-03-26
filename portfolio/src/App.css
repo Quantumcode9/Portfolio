@@ -23,14 +23,12 @@ html, body, #root{
   flex-direction: column;
 }
 
+
 .card {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   border-radius: 8px;
   background-color: #242424;
   color: white;
-
   padding: 1em;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
@@ -40,10 +38,10 @@ html, body, #root{
 
 
 
-
 .header {
   padding: 50px;
   top: 0;
+  position: relative;
   text-align: center;
   background-color: #b5b5b5; 
   overflow: hidden;
@@ -154,46 +152,9 @@ div {
   }
 }
 
-.glow {
-  @extend .glitch;
-  text-shadow: 0 0 1000px rgb(223, 191, 191);
-  color: transparent;
-  position: absolute;
-  top: 0;
-}
-
-.subtitle {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 100;
-  font-size: .8vw;
-  color: rgba(165, 141, 141, .4);
-  text-transform: uppercase;
-  letter-spacing: 1em;
-  text-align: center;
-  position: absolute;
-  left: 17%;
-  animation: glitch-2 5s 5.02s infinite;
-}
-
-@keyframes glitch-2 {
-  1%{
-    transform: rotateX(10deg) skewX(70deg);
-  }
-  2%{
-    transform: rotateX(0deg) skewX(0deg);
-  }
-} 
 
 
-
-
-.glitch::before,
-.glitch::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-}
-
+/* Glitch effect */
 
 
 .glitch-effect {
@@ -202,6 +163,15 @@ div {
   letter-spacing: 0.1em;
   animation: glitch 5s infinite linear alternate-reverse;
 }
+
+@keyframes glitch {
+  1%{
+    transform: rotateX(10deg) skewX(70deg);
+  }
+  2%{
+    transform: rotateX(0deg) skewX(0deg);
+  }
+} 
 
 
 
@@ -358,7 +328,7 @@ div {
 
 .project-item {
  
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
   padding: 10px;
   border-radius: 8px;
   transition: transform 0.2s;
@@ -378,6 +348,122 @@ div {
   object-fit: cover;
   border-radius: 5px;
 }
+
+/* Responsive styles */
+
+@media screen and (max-width: 768px) {
+  .projects-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* card */
+
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  /* display: grid;
+  grid-template-rows: auto 1fr auto; /* Header, body, and footer 
+  grid-template-columns: repeat(2, 1fr); */
+  gap: 1rem;
+  width: 100%;
+  background-color: #242424;
+  color: white;
+  padding: 1em;
+
+  border-radius: 8px;
+
+  overflow: hidden; 
+}
+
+.project-card-header {
+  grid-column: 1 / -1; 
+  border-bottom: 2px solid black;
+}
+
+
+.card-tech {
+  grid-column: 1 / -1; 
+  border-bottom: 2px solid black;
+  text-transform: capitalize;
+}
+
+.card-body {
+  display: grid;
+  grid-template-rows: auto 1fr; 
+  gap: 1rem;
+}
+
+.card-technologies,
+.card-info {
+  grid-row: 1; 
+}
+
+.card-challenges,
+.card-solutions {
+  grid-column: span 1; 
+
+}
+
+.project-card-footer {
+  grid-column: 1 / -1; 
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-link {
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  flex-grow: 1;
+  margin: 0.5em;
+}
+
+.project-link {
+  background-color: rgb(181, 181, 181);
+  color:   #ffffff;
+}
+
+
+.code-link {
+  background-color:rgb(181, 181, 181);
+  color: #ffffff;
+}
+
+.project-link:hover,
+.code-link:hover {
+  filter: brightness(0.9);
+  background-color: #242424;
+  color: #f1aeb5;
+}
+
+
+.project-card-tech {
+  font-style: italic;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+
+}
+
+
+/* RESPONSIVE STYLES */
+
+@media screen and (max-width: 768px) {
+  .project-card {
+    grid-template-columns: 1fr; 
+  }
+}
+
+@media (max-width: 768px) {
+  .project-item {
+    flex-direction: column-reverse;
+  }
+}
+
 
 
 
@@ -698,6 +784,12 @@ div {
 
 /* CONTACT SECTION */
 
+#contact {
+  text-align: center;
+  background-color: #242424;
+  height: 90vh;
+}
+
 .contact-container {
   display: flex;
   gap: 20px; 
@@ -708,13 +800,17 @@ div {
 }
 
 .contact-content {
-  display: flex;
-  flex-direction: row;
+  /* display: flex;
+  flex-direction: row; */
 
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+
+
+  height: 90vh;
   justify-content: center;
-  flex-wrap: wrap;
-
-  gap: 20px;
   padding: 20px;
   border-radius: 8px;
   background-color: #242424;
@@ -723,9 +819,48 @@ div {
   transition: transform 0.2s;
   height: 100%;
   width: 100%;
-  margin-bottom: 70px;
+}
+
+
+
+.contact-info {
+  display: grid;
+  grid-column: span 2;
+  margin-top: 60px;
+  grid-template-columns: repeat( 2, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+
+.one {
+  grid-column: 1 / 2;
+  grid-row: 1;
+}
+.two {
+  grid-column: 2 / 4;
+  grid-row: 1 / 2
+}
+.three {
+  grid-column: 1;
+  grid-row: 2;
 
 }
+
+
+
+
+.contact-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 8px;
+  padding: 20px;
+  transition: transform 0.2s;
+  height: 100%;
+  width: 100%;
+}
+
 
 
 
@@ -734,11 +869,12 @@ div {
   flex-direction: column;
   margin: 0 auto;
   gap: 20px;
-  width: 80%;
+  width: 100%;
   background-color: #0202026e;
   border-radius: 10px;
   box-shadow: -1rem 0 2rem #000;
   padding: 20px;
+  margin-bottom: 90px;
 }
 
 #contact-form input, #contact-form textarea {
@@ -798,6 +934,121 @@ div {
 }
 
 
+
+
+
+.contact-card-flipper {
+  perspective: 1000px;
+  width: 100%; 
+  height: 100%; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.contact-card-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: #dcdcdc;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+  width: 100%; 
+  height: 100%; 
+}
+
+.contact-card-face {
+  position: absolute;
+  justify-content: center;
+  -webkit-backface-visibility: hidden; 
+  backface-visibility: hidden;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100%; 
+  width: 100%;
+  background-color: #0202026e;
+  border-radius: 10px;
+  box-shadow: -1rem 0 3rem #000;
+  overflow: hidden;
+
+}
+
+.contact-card-flipper {
+  width: 16rem; 
+  height: 24rem;
+
+}
+
+.contact-card-content {
+  width: 16rem; 
+  height: 24rem;
+
+}
+
+.contact-card-face {
+  width: 16rem; 
+  height: 24rem;
+}
+
+.contact-card-face .fa-chevron-circle-right {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 1em;
+  color: white;
+  transition: color 0.3s;
+}
+
+.contact-card-face:hover .fa-chevron-circle-right {
+  color: #b5b5b5;
+  transform: rotate(90deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+
+
+  @media screen and (max-width: 768px) {
+    .contact-content {
+      grid-template-columns: 1fr;
+    }
+  
+    .contact-info {
+      grid-column: auto;
+      grid-row: auto;
+      margin-bottom: 30px;
+    }
+  
+    .contact-form-container {
+      order: -1; 
+    }
+  }
+
+  @media screen and (max-width: 568px) {
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+    }
+    .contact-card-extra {
+      display: none;
+    }
+
+    .contact-card-flipper {
+      width: 100%;
+    }
+    
+    .contact-card-content {
+      width: 100%;
+    }
+    
+    .contact-card-face {
+      width: 100%;
+      height: 14rem;
+    }
+
+    }
+  
 
 
 
