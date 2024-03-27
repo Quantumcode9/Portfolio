@@ -122,7 +122,8 @@ return (
     
     <div className="contact-form-container">
         <p>Send me a message using the form below:</p>
-        <form id="contact-form" name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}> 
+        <form id="contact-form" name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
+        <input type="hidden" name="form-name" value="contact" />
             <div>
                 <label htmlFor="name">Name:</label><br />
                 <input type="text" id="name" name="name" onChange={handleChange} /><br />
