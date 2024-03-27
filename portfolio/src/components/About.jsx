@@ -27,20 +27,17 @@ return (
     </div>
 {/* ROW 1 */}
 <div className="about-me-container">
-    <div className="row">
     <div className='col-md-4'>
         <div className='profile-card'>
-        <h1>{aboutDetails.name}</h1>
         <img src={aboutDetails.imageUrl} alt={`Portrait of ${aboutDetails.name}`} className="about-me-image"/>
         </div>
         </div>
         <div className='col-md-6'>
-     
         <div className="about-me-card">
         <p className="about-me-description">{aboutDetails.description}</p>
-        <a href={aboutDetails.resumeUrl} target="_blank" rel="noopener noreferrer" className="about-me-resume">
+        {/* <a href={aboutDetails.resumeUrl} target="_blank" rel="noopener noreferrer" className="about-me-resume">
         Download Resume
-        </a>
+        </a> */}
         <a href={aboutDetails.resumeDoc} target="_blank" rel="noopener noreferrer" className="about-me-resume">
         View Resume
         </a>
@@ -86,7 +83,7 @@ return (
                     </div>
 
 
-                    <div className='col-lg-3 col-md-4 col-sm-6'>
+                    <div className='col-lg-3  col-md-4 col-sm-6'>
     <div className="card-flipper" onClick={() => handleFlip(5)}>
             <div className={`card-content ${flippedId === 5 ? 'flipped' : ''}`}>
                     {/* Front face of the card */}
@@ -183,7 +180,7 @@ return (
             </div>
 </div>
 </div>
-</div>
+
 
 
 

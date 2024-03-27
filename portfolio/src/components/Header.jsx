@@ -3,11 +3,11 @@ import React, { useEffect, useState } from 'react';
 const Header = () => {
   const titles = ["Software Engineer", "Web Developer", "UI/UX Developer", "Frontend Developer", "Backend Developer", "DB Administrator"];
   const skillsForTitles = [
-    "Java - Git - Python - Agile Methodologies",
-    "HTML5 - CSS - JavaScript - Responsive Design",
-    "Bootstrap - Materialize - SASS - Sketch - Figma - Adobe XD",
-    "React - Vue - Angular - Webpack - Context API",
-    "Node.js - Express - Django - RESTful APIs",
+    "Git - Python -  SQL - NoSQL", 
+    "HTML5 - CSS - JavaScript - Bootstrap - jQuery",
+    "SASS - Sketch - Figma - Adobe XD",
+    "React - Vue - Angular - Webpack - Next.js",
+    "Node.js - Express - Django - REST - OAuth",
     "MongoDB - MySQL - PostgreSQL - AWS", 
   ];
   

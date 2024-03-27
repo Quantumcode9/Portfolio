@@ -1,12 +1,15 @@
 import React  from "react";
+import aboutDetails from '../data/aboutDetails.json';
 
 const Intro = () => {
 
     return (
-        <div>
-        <h1>A Portfolio</h1>
-        <p>Welcome to my portfolio! Here you can find some of my projects and contact information.</p>
+        <div className="intro">
+        <h3>{aboutDetails.name}: A Portfolio</h3>
+        <p>Here you can find some of my projects and contact information.</p>
+        <h3>Lets build something together!</h3>
         </div>
+        
     );
     }
 

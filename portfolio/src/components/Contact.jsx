@@ -85,21 +85,21 @@ return (
     <div className="contact-content">
     <div className="contact-info">
     <div className="contact-card-extra">
-        <div className="contact-card-flipper" onClick={() => handleFlip(2)}>
+        {/* <div className="contact-card-flipper" onClick={() => handleFlip(2)}> */}
         <div className={`contact-card-content ${flippedId === 2 ? 'flipped' : ''}`}>
                     {/* Front face of the card */}
     <div className="contact-card-face card-face-front">
     <h2>Get in Touch</h2>
     <p>Feel free to reach out to me with any questions or comments. I'm always looking for new opportunities.</p>
-    <i className="fas fa-chevron-circle-right"></i>
+    {/* <i className="fas fa-chevron-circle-right"></i>
     </div>
     {/* Back face of the card */}
-    <div className="contact-card-face card-face-back">
+    {/* <div className="contact-card-face card-face-back">
     <h2>Contact Me</h2>
     <p><i className="fas fa-envelope"></i></p>
     <p><i className="fas fa-map-marker-alt"></i></p>
-    <p><i className="fas fa-phone"></i></p>
-    </div>
+    <p><i className="fas fa-phone"></i></p> */} 
+    {/* </div> */}
     </div>
     </div>
 
@@ -131,7 +131,7 @@ return (
 
         <div className="contact-form-container">
                 <p>Send me a message using the form below:</p>
-        <div className="contact-card">
+
         <form id="contact-form" name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}> 
             <div>
                 <label htmlFor="name">Name:</label><br />
@@ -149,7 +149,7 @@ return (
                 {errors.message && <p>{errors.message}</p>}
             </div>
             <div>
-                <input type="submit" value="Submit" />
+                <button type="submit" className="submit-button">Submit</button>
             </div>
         </form>
         {formStatus.submitting && <p>Submitting...</p>}
@@ -157,7 +157,7 @@ return (
     {formStatus.error && <p>Sorry, there was a problem with your submission. Please try again, or contact me through LinkedIn or GitHub.</p>}
     </div>
     </div>
-    </div>
+
 
 </>
 

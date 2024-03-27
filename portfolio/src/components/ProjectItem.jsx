@@ -30,7 +30,7 @@ const ProjectItem = ({ project }) => {
 <>
 {/* row 1 */}
   <h2 className='project-title'>  {project.title}</h2>
-    <p className="project-card-tech">{project.technologies.join(' - ')}</p>
+  <p className="project-card-tech">{project.technologies.join(' - ').toUpperCase()}</p>
 
 
 
@@ -44,9 +44,7 @@ const ProjectItem = ({ project }) => {
 
 
 <div className='project-card' style={{ backgroundColor: '#242424', color: "white", }}>
-  
 
-  
   <div className="project-card-header">
     <p className="project-card-title">{project.description}</p>
   </div>
@@ -66,8 +64,8 @@ const ProjectItem = ({ project }) => {
 
 
   <div className="project-card-footer">
+  <a href={project.github} target="_blank" rel="noopener noreferrer" className="card-link code-link">Check out the code</a>
     <a href={project.link} target="_blank" rel="noopener noreferrer" className="card-link project-link">Check out the project</a>
-    <a href={project.github} target="_blank" rel="noopener noreferrer" className="card-link code-link">Check out the code</a>
   </div>
 </div>
 
