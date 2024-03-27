@@ -28,9 +28,8 @@ const Header = () => {
 
   return (
     <header className="header" style={{ minHeight: '80vh', position: 'relative', overflow: 'hidden' }}>
-   
-    <div className="glitch" data-text="Brian Taylor" style={{ fontSize: '30px' }}>Brian Taylor</div>
-    <br />
+      <div className="glitch" data-text="Brian Taylor" style={{ fontSize: '30px' }}>Brian Taylor</div>
+      <br />
     <div className="glitch" data-text="Full Stack Developer" style={{ fontSize: '3vw' }}>Full Stack Developer</div>
     <hr />
       <div className={`glitch ${glitchTrigger ? 'glitch-effect' : ''}`} id="glitchTitle" data-text={titles[currentIndex]}>
@@ -43,11 +42,7 @@ const Header = () => {
       <div className="static-background"></div>
       <div className="scanlines"></div>
         <div className="noise"></div>
-     
-    {/* <h2 className={`fadeInUp ${titleAnimation}`}>UI/UX Designer</h2> */}
 
-
-    
     </header>
     
 );

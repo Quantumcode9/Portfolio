@@ -28,6 +28,7 @@ const ProjectItem = ({ project }) => {
 
   return (
 <>
+
 {/* row 1 */}
   <h2 className='project-title'>  {project.title}</h2>
   <p className="project-card-tech">{project.technologies.join(' - ').toUpperCase()}</p>
@@ -70,11 +71,11 @@ const ProjectItem = ({ project }) => {
 </div>
 
 {/* row 2 */}
- 
+
 <div className="project-item" style={{ width: '100%', position: 'relative', borderRadius: '10px', overflow: 'hidden' }}>
     <ModelViewer modelUrl={project.model} />
     {isVideoPlaying && (
-       <div style={{ position: 'absolute', top: 10, left: 0, width: '100%', maxHeight: '100%', overflow: 'hidden' }}> 
+      <div style={{ position: 'absolute', top: 10, left: 0, width: '100%', maxHeight: '100%', overflow: 'hidden' }}> 
         <video id="project-video" width="96%" height="396" controls>
           <source src={project.videoUrl} type="video/mp4" />
           Your browser does not support the video tag.
@@ -89,6 +90,7 @@ const ProjectItem = ({ project }) => {
       )}
       </div>
   </div>
+  <div className="divider-block"></div>
   </>
   );
 };
