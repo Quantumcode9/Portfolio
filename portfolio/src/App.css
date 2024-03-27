@@ -576,9 +576,6 @@ and (max-width: 768px) {
 .about-me-container {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-
- 
   justify-content: center;
   gap: 10px;
   padding: 10px;

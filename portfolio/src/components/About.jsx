@@ -26,7 +26,7 @@ return (
 </div>
 {/* ROW 1 */}
 <div className="about-me-container">
-<div className='col-md-4'>
+<div className='col-md-6'>
     <div className='profile-card'>
     <img src={aboutDetails.imageUrl} alt={`${aboutDetails.name}`} className="about-me-image"/>
     </div>
