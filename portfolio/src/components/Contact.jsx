@@ -9,19 +9,11 @@ const Contact = () => {
         setFlippedId(flippedId === id ? null : id);
     };
     
-
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         message: '',
     });
-
-
-const [errors, setErrors] = useState({
-    name: '',
-    email: '',
-    message: '',
-});
 
     const [formStatus, setFormStatus] = useState({
     submitting: false,
@@ -29,31 +21,14 @@ const [errors, setErrors] = useState({
     error: false
     });
 
-const handleChange = (e) => {
-setFormData({ ...formData, [e.target.name]: e.target.value });
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setFormStatus({ ...formStatus, submitting: true });
 
-switch (e.target.name) {
-case 'name':
-    setErrors({ ...errors, name: e.target.value ? '' : 'Name is required' });
-    break;
-case 'email':
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    setErrors({ ...errors, email: emailRegex.test(e.target.value) ? '' : 'Email is not valid' });
-    break;
-case 'message':
-    setErrors({ ...errors, message: e.target.value ? '' : 'Message is required' });
-    break;
-default:
-    break;
-}
-};
-
-const handleSubmit = async (e) => {
-    e.preventDefault();
-    setFormStatus({ ...formStatus, submitting: true });
-
-    if (!errors.name && !errors.email && !errors.message) {
         const form = new FormData();
         form.append('form-name', 'contact');
         form.append('name', formData.name);
@@ -70,8 +45,7 @@ const handleSubmit = async (e) => {
         } catch (error) {
             setFormStatus({ submitting: false, success: false, error: true });
         }
-    }
-};
+    };
 
 
 return (
@@ -127,17 +101,14 @@ return (
             <div>
                 <label htmlFor="name">Name:</label><br />
                 <input type="text" id="name" name="name" onChange={handleChange} /><br />
-                {errors.name && <p>{errors.name}</p>}
             </div>
             <div>
                 <label htmlFor="email">Email:</label><br />
                 <input type="text" id="email" name="email" onChange={handleChange} /><br />
-                {errors.email && <p>{errors.email}</p>}
             </div>
             <div>
                 <label htmlFor="message">Message:</label><br />
                 <textarea id="message" name="message" onChange={handleChange} /><br />
-                {errors.message && <p>{errors.message}</p>}
             </div>
             <div>
                 <button type="submit" className="submit-button">Submit</button>
