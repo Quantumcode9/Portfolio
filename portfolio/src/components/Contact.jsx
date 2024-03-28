@@ -15,37 +15,17 @@ const Contact = () => {
         message: '',
     });
 
-    const [formStatus, setFormStatus] = useState({
-    submitting: false,
-    success: false,
-    error: false
-    });
-
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
-
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setFormStatus({ ...formStatus, submitting: true });
-
-        const form = new FormData();
-        form.append('form-name', 'contact');
-        form.append('name', formData.name);
-        form.append('email', formData.email);
-        form.append('message', formData.message);
-        try {
-            await fetch('/', {
-                method: 'POST',
-                headers: { 'Accept': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams(form).toString()
-            });
-            setFormData({ name: '', email: '', message: '' });
-            setFormStatus({ submitting: false, success: true, error: false });
-        } catch (error) {
-            setFormStatus({ submitting: false, success: false, error: true });
-        }
+        console.log('Form data:', formData);
+        setFormData({ name: '', email: '', message: '' });
     };
+
+
 
 
 return (
@@ -96,29 +76,26 @@ return (
     
     <div className="contact-form-container">
         <p>Send me a message using the form below:</p>
-        <form id="contact-form" name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
-        <input type="hidden" name="form-name" value="contact" />
+        <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
+            <input type="hidden" name="form-name" value="contact" />
             <div>
                 <label htmlFor="name">Name:</label><br />
-                <input type="text" id="name" name="name" onChange={handleChange} /><br />
+                <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} /><br />
             </div>
             <div>
                 <label htmlFor="email">Email:</label><br />
-                <input type="text" id="email" name="email" onChange={handleChange} /><br />
+                <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} /><br />
             </div>
             <div>
                 <label htmlFor="message">Message:</label><br />
-                <textarea id="message" name="message" onChange={handleChange} /><br />
+                <textarea id="message" name="message" value={formData.message} onChange={handleChange} /><br />
             </div>
             <div>
                 <button type="submit" className="submit-button">Submit</button>
             </div>
         </form>
-        {formStatus.submitting && <p>Submitting...</p>}
-    {formStatus.success && <p>Thanks for your message! I'll will get back to you soon.</p>}
-    {formStatus.error && <p>Sorry, there was a problem with your submission. Please try again, or contact me through LinkedIn or GitHub.</p>}
     </div>
-    </div>
+</div>
 
 
 </>
