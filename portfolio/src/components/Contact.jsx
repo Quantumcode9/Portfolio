@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import contact from '../data/contact.json';
+import Form from './Form';
 
 const Contact = () => {
 
@@ -9,29 +10,29 @@ const Contact = () => {
         setFlippedId(flippedId === id ? null : id);
     };
 
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        message: ''
-    });
+    // const [formData, setFormData] = useState({
+    //     name: '',
+    //     email: '',
+    //     message: ''
+    // });
 
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
-    }
+    // const handleChange = (e) => {
+    //     setFormData({
+    //         ...formData,
+    //         [e.target.name]: e.target.value
+    //     });
+    // }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        fetch('/', {
-            method: 'POST',
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(formData).toString()
-        })
-        .then(() => alert('Message sent!'))
-        .catch((error) => alert(error));
-    }
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     fetch('/', {
+    //         method: 'POST',
+    //         headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    //         body: new URLSearchParams(formData).toString()
+    //     })
+    //     .then(() => alert('Message sent!'))
+    //     .catch((error) => alert(error));
+    // }
 
 
 return (
@@ -79,10 +80,9 @@ return (
                 </div>
             </div>
     </div>
-    
-    <div className="contact-form-container">
-        <p>Send me a message using the form below:</p>
-        <form id="contact-form" name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
+
+        <Form />
+        {/* <form id="contact-form" name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
         <input type="hidden" name="form-name" value="contact-form" />
             <div>
                 <label htmlFor="name">Name:</label><br />
@@ -98,9 +98,9 @@ return (
             </div>
             <div>
             <button type="submit"> Submit</button>
-            </div>
-        </form>
-    </div>
+            </div> */}
+        {/* </form> */}
+
 </div>
 
 
