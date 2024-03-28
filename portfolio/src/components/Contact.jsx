@@ -10,31 +10,6 @@ const Contact = () => {
         setFlippedId(flippedId === id ? null : id);
     };
 
-    // const [formData, setFormData] = useState({
-    //     name: '',
-    //     email: '',
-    //     message: ''
-    // });
-
-    // const handleChange = (e) => {
-    //     setFormData({
-    //         ...formData,
-    //         [e.target.name]: e.target.value
-    //     });
-    // }
-
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     fetch('/', {
-    //         method: 'POST',
-    //         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    //         body: new URLSearchParams(formData).toString()
-    //     })
-    //     .then(() => alert('Message sent!'))
-    //     .catch((error) => alert(error));
-    // }
-
-
 return (
 <>
 <div className="projects-header">
@@ -82,25 +57,6 @@ return (
     </div>
 
         <Form />
-        {/* <form id="contact-form" name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
-        <input type="hidden" name="form-name" value="contact-form" />
-            <div>
-                <label htmlFor="name">Name:</label><br />
-                <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} /><br />
-            </div>
-            <div>
-                <label htmlFor="email">Email:</label><br />
-                <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} /><br />
-            </div>
-            <div>
-                <label htmlFor="message">Message:</label><br />
-                <textarea id="message" name="message" value={formData.message} onChange={handleChange} /><br />
-            </div>
-            <div>
-            <button type="submit"> Submit</button>
-            </div> */}
-        {/* </form> */}
-
 </div>
 
 
