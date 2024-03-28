@@ -3,26 +3,25 @@ import React from 'react';
 const Form = () => {
 
 
-
-const handleSubmit = (event) => {
-    event.preventDefault();
-    const form = event.target;
-    const data = new FormData(form);
-    const xhr = new XMLHttpRequest();
-    xhr.open(form.method, form.action);
-    xhr.setRequestHeader("Accept", "application/json");
-    xhr.onreadystatechange = () => {
-        if (xhr.readyState !== XMLHttpRequest.DONE) return;
-        if (xhr.status === 200) {
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const data = new FormData(form);
+        data.append("form-name", "contact"); 
+    
+        fetch("/", {
+            method: "POST",
+            headers: { "Accept": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(data).toString(),
+        })
+        .then(() => {
             form.reset();
             alert("Message sent!");
-        } else {
+        })
+        .catch((error) => {
             alert("Message failed to send.");
-            
-        }
+        });
     }
-    xhr.send(data);
-}
     return (
         <div className="contact-form-container">
         <p>Send me a message using the form below:</p>
