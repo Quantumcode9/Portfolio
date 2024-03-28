@@ -8,36 +8,30 @@ const Contact = () => {
     const handleFlip = (id) => {
         setFlippedId(flippedId === id ? null : id);
     };
-    
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        message: '',
+        message: ''
     });
-    
+
     const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
-    
-    const handleSubmit = async (e) => {
-    e.preventDefault();
-    
-    const response = await fetch('https://example.com/api/contact', {
-        method: 'POST',
-        headers: {
-        'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-    });
-    
-    if (response.ok) {
-        console.log('Message sent successfully');
-    } else {
-        console.log('Message sending failed');
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
     }
-    };
 
-
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        fetch('/', {
+            method: 'POST',
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString()
+        })
+        .then(() => alert('Message sent!'))
+        .catch((error) => alert(error));
+    }
 
 
 return (
@@ -103,7 +97,7 @@ return (
                 <textarea id="message" name="message" value={formData.message} onChange={handleChange} /><br />
             </div>
             <div>
-            <input type="submit" value="Submit" />
+            <button type="submit" value="Submit"> Submit</button>
             </div>
         </form>
     </div>
