@@ -14,15 +14,27 @@ const Contact = () => {
         email: '',
         message: '',
     });
-
+    
     const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
     };
     
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        console.log('Form data:', formData);
-        setFormData({ name: '', email: '', message: '' });
+    e.preventDefault();
+    
+    const response = await fetch('https://example.com/api/contact', {
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+    });
+    
+    if (response.ok) {
+        console.log('Message sent successfully');
+    } else {
+        console.log('Message sending failed');
+    }
     };
 
 
@@ -76,7 +88,7 @@ return (
     
     <div className="contact-form-container">
         <p>Send me a message using the form below:</p>
-        <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
+        <form id="contact-form" name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
             <input type="hidden" name="form-name" value="contact" />
             <div>
                 <label htmlFor="name">Name:</label><br />
@@ -91,7 +103,7 @@ return (
                 <textarea id="message" name="message" value={formData.message} onChange={handleChange} /><br />
             </div>
             <div>
-                <button type="submit" className="submit-button">Submit</button>
+            <input type="submit" value="Submit" />
             </div>
         </form>
     </div>
