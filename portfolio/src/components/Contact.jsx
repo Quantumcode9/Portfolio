@@ -83,7 +83,7 @@ return (
     <div className="contact-form-container">
         <p>Send me a message using the form below:</p>
         <form id="contact-form" name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
-        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="form-name" value="contact-form" />
             <div>
                 <label htmlFor="name">Name:</label><br />
                 <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} /><br />
@@ -97,7 +97,7 @@ return (
                 <textarea id="message" name="message" value={formData.message} onChange={handleChange} /><br />
             </div>
             <div>
-            <button type="submit" value="Submit"> Submit</button>
+            <button type="submit"> Submit</button>
             </div>
         </form>
     </div>
