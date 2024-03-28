@@ -1013,6 +1013,7 @@ and (max-width: 768px) {
 
 .submit-button {
   padding: 10px;
+  margin: 0 auto;
   border-radius: 5px;
   border: 1px solid #b5b5b5;
   background-color: #242424;

@@ -1,31 +1,46 @@
 import React from 'react';
 
 const Form = () => {
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const formData = new FormData(event.target);
-        const data = Object.fromEntries(formData);
-        console.log(data);
-    };
+
+
+
+const handleSubmit = (event) => {
+    event.preventDefault();
+  
+    const myForm = event.target;
+    const formData = new FormData(myForm);
+  
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+        .then(() => alert("Message sent!"))
+      .catch((error) => alert(error));
+  };
 
     return (
         <div className="contact-form-container">
         <p>Send me a message using the form below:</p>
         <form id="contact-form" data-netlify="true" onSubmit={handleSubmit}>
-        <input type="hidden" name="form-name" value="contact" />
-            <label htmlFor="email">Email:</label>
-            <input type="email" id="email" name="email" required />
-
-            <label htmlFor="contact">Contact:</label>
-            <input type="text" id="contact" name="contact" required />
-
-            <label htmlFor="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-
-            <button type="submit">Submit</button>
+            <input type="hidden" name="form-name" value="contact" />
+            <div className="form-group">
+                <label htmlFor="name">Name:</label><br />
+                <input type="text" id="name" name="name" required />
+            </div>
+            <div className="form-group">
+                <label htmlFor="email">Email:</label><br />
+                <input type="email" id="email" name="email" required />
+            </div>
+            <div className="form-group">
+                <label htmlFor="message">Message:</label><br />
+                <textarea id="message" name="message" required />
+            </div>
+            <button type="submit" className="submit-button">Submit</button>
         </form>
-    </div>
+        </div>
     );
 };
 
 export default Form;
+
