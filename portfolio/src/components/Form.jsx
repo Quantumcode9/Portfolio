@@ -1,46 +1,77 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 
-const Form = () => {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [message, setMessage] = useState("");
-    const encode = (data) => {
-        return Object.keys(data)
-            .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-            .join("&");
-    }
+function ContactForm() {
+const [state, handleSubmit] = useForm("mwkgrqle");
+const [name, setName] = useState('');
+const [email, setEmail] = useState('');
+const [message, setMessage] = useState('');
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(name, email, message);
-        setName("");
-        setEmail("");
-        setMessage("");
-
-        fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encode({ "form-name": "contact", name, email, message })
-        })
-        .then(() => alert("Success!"))
-        .catch(error => alert(error));
-    }
-
-    return (
-        <div className="contact-form-container">
-            <p>Fill out the form below to send me a message</p>
-            <div className="contact-form">
-            <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
-                <input type="hidden" name="form-name" value="contact" />
-                <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} /><br /><br />
-                <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} /><br /><br />
-                <textarea placeholder="Message" value={message} onChange={(e) => setMessage(e.target.value)}/><br /><br />
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-        </div>
-    )
+const resetForm = () => {
+    setName('');
+    setEmail('');
+    setMessage('');
 }
 
-export default Form;
+useEffect(() => {
+    if (state.succeeded) {
+    resetForm();
+    }
+}, [state.succeeded]);
+
+return (
+<div className="contact-form-container">
+    <p>Fill out the form below to send me a message</p>
+    <div className="contact-form">
+    <form onSubmit={handleSubmit}>
+        <label htmlFor="name">Name</label> <br />
+        <input
+        id="name"
+        type="name"
+        name="name"
+        value={name}
+        onChange={e => setName(e.target.value)}
+        /><br />
+        <ValidationError
+            prefix="Name"
+            field="name"
+            errors={state.errors}
+        />
+        <label htmlFor="email">Email</label> <br />
+        <input
+            id="email"
+            type="email"
+            name="email"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+        /><br />
+        <ValidationError
+            prefix="Email"
+            field="email"
+            errors={state.errors}
+        />
+        <label htmlFor="message">Message</label> <br />
+        <textarea
+            id="message"
+            name="message"
+            value={message}
+            onChange={e => setMessage(e.target.value)}
+        /><br />
+        <ValidationError
+            prefix="Message"
+            field="message"
+            errors={state.errors}
+        />
+        <button type="submit" className='submit-button' disabled={state.submitting}>
+            Submit
+        </button>
+        {state.succeeded && <p>Thanks! I'll get back to you soon.</p>}
+        {state.error && <p>Oops! There was a problem submitting your form, please try again, or contact through LinkedIn or GitHub.</p>}
+    </form>
+    </div>
+</div>
+);
+}
+
+
+export default ContactForm;
