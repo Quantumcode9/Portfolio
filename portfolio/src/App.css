@@ -983,7 +983,7 @@ and (max-width: 768px) {
 
 
 
-#contact-form {
+.contact-form {
   display: grid;
   grid-template-columns: 1fr;
   grid-column: span 2;
@@ -997,7 +997,7 @@ and (max-width: 768px) {
   margin-bottom: 90px;
 }
 
-#contact-form input, #contact-form textarea {
+.contact-form input, .contact-form textarea {
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #b5b5b5;
@@ -1006,7 +1006,7 @@ and (max-width: 768px) {
   width: 60%;
 }
 
-#contact-form input:focus, #contact-form textarea:focus {
+.contact-form input:focus, .contact-form textarea:focus {
   border: 1px solid #242424;
 }
 
@@ -1035,7 +1035,7 @@ and (max-width: 768px) {
 
 
 @media screen and (max-width: 768px) {
-  #contact-form input, #contact-form textarea {
+  .contact-form input, .contact-form textarea {
     width: 80%;
     padding: 0;
 
