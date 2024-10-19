@@ -3,6 +3,7 @@ import ProjectItem from './ProjectItem';
 import projects from '../data/projects.json';
 
 const Projects = () => {
+  const sortedProjects = [...projects].sort((a, b) => a.id - b.id);
   return (
     <>
     <div className="projects-header">
@@ -10,7 +11,7 @@ const Projects = () => {
       </div>
     
     <div>
-      {projects.map(project => (
+      {sortedProjects.map(project => (
         <ProjectItem key={project.id} project={project} />
       ))}
     </div>

@@ -75,19 +75,23 @@ const ProjectItem = ({ project }) => {
 <div className="project-item" style={{ width: '100%', position: 'relative', borderRadius: '10px', overflow: 'hidden' }}>
     <ModelViewer modelUrl={project.model} />
     {isVideoPlaying && (
-      <div style={{ position: 'absolute', top: 10, left: 0, width: '100%', maxHeight: '100%', overflow: 'hidden' }}> 
-        <video id="project-video" width="96%" height="396" controls>
-          <source src={project.videoUrl} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    )}
-        {!isVideoPlaying && (
-        <button className= "video-button" onClick={handleVideoPlay}><i className="fas fa-play"></i> Play</button>
-        )}
-        {isVideoPlaying && (
-        <button className= "video-button" onClick={handleVideoStop}><i className="fas fa-stop"></i> Stop</button>
-      )}
+  <div style={{ position: 'absolute', top: 10, left: 0, width: '100%', maxHeight: '100%', overflow: 'hidden' }}> 
+    <video id="project-video" width="96%" height="396" controls>
+      <source src={project.videoUrl} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+)}
+{!isVideoPlaying && project.videoUrl && (
+  <button className="video-button" onClick={handleVideoPlay}>
+    <i className="fas fa-play"></i> Play
+  </button>
+)}
+{isVideoPlaying && (
+  <button className="video-button" onClick={handleVideoStop}>
+    <i className="fas fa-stop"></i> Stop
+  </button>
+)}
       </div>
   </div>
   <div className="divider-block"></div>

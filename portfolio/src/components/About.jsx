@@ -152,7 +152,7 @@ return (
     </div>
 </div>
     
-<div className='col-lg-2 col-md-4 col-sm-6'>
+<div className='col-lg-3 col-md-4 col-sm-6'>
     <div className="card-flipper" onClick={() => handleFlip(2)}>
         <div className={`card-content ${flippedId === 2 ? 'flipped' : ''}`}>
                 {/* Front face of the card */}
