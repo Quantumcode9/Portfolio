@@ -6,14 +6,19 @@ const ProjectItem = ({ project }) => {
   const modelElement = useRef(null); 
   const [isInView, setInView] = useState(false);
   const projectRef = useRef();
-
+ 
   useEffect(() => {
+    const currentRef = projectRef.current;
     const observer = new IntersectionObserver(([entry]) => {
-        setInView(entry.isIntersecting);
+        if (entry.isIntersecting) {
+            setInView(true); // Trigger model loading
+        } else {
+            setInView(false); // Unload model if it's out of view
+        }
     }, { threshold: 0.1 });
 
-    if (projectRef.current) observer.observe(projectRef.current);
-    return () => projectRef.current && observer.unobserve(projectRef.current);
+    if (currentRef) observer.observe(currentRef);
+    return () => currentRef && observer.unobserve(currentRef);
 }, []);
 
   const handleClick = () => {
@@ -89,7 +94,9 @@ const ProjectItem = ({ project }) => {
 {/* row 2 */}
 
 <div className="project-item w-full relative rounded-lg overflow-hidden">
-    <ModelViewer modelUrl={project.model} />
+<div ref={projectRef}>
+{isInView && <ModelViewer modelUrl={project.model} />}
+</div>
     {isVideoPlaying && (
       <div className="absolute top-20 left-5 md:top-6 md:left-3 w-[90%] md:w-full max-h-full overflow-hidden" >
           <video 

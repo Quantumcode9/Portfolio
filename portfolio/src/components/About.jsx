@@ -99,24 +99,21 @@ const About = () => {
             {/* Cards Section */}
             <div className="cards-section grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
                 {cardsData.map((card) => (
-                    <div
-                        key={card.id}
-                        className="card-flipper"
-                        onClick={() => handleFlip(card.id)}
-                    >
+                    <div key={card.id} className="card-flipper"
+                        onClick={() => handleFlip(card.id)}>
                         <div className={`card-content ${flippedId === card.id ? 'flipped' : ''}`}>
                             {/* Front Face */}
                             <div className="card-face card-face-front bg-gray-800 p-2 rounded-lg shadow-md">
                                 <h2 className="text-xl mt-6 font-semibold uppercase text-white mb-3">
                                     {card.title}
                                 </h2>
-                        
+
                                 <p className="text-md ">{card.description}</p>
                                 <i className="fas fa-chevron-circle-right bottom-0 text-white text-lg"></i>
                             </div>
                             {/* Back Face */}
                             <div className="card-face card-face-back bg-gray-800 p-2 rounded-lg shadow-md">
-                                <h2 className="text-xl font-semibold text-white mb-4">
+                                <h2 className="text-xl font-semibold uppercase mt-6 text-white mb-4">
                                     {card.backTitle}
                                 </h2>
                                 {card.backDescription && (
@@ -131,8 +128,7 @@ const About = () => {
                                             {/* Progress bar */}
                                             <div
                                                 className="skill-level-bar bg-pink-400 h-full rounded-md text-center text-xs text-white flex items-center justify-center"
-                                                style={{ width: skill.level }}
-                                            >
+                                                style={{ width: skill.level }}>
                                                 {skill.name}
                                             </div>
                                         </div>

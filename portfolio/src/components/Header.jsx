@@ -4,8 +4,8 @@ const Header = () => {
   const titles = ["Full-Stack Developer", "Front-End Developer", "Back-End Developer", "DB Administrator"];
   const skillsForTitles = [
     "JavaScript - Django - Next.js - Python - Git",
-    "CSS3 - JavaScript - React - Tailwind CSS - EJS",
-    "Node.js - Express - REST APIs - OAuth - Docker",
+    "CSS3 - JavaScript - React - Tailwind - EJS",
+    "Node.js - Express - REST API - OAuth - Docker",
     "MongoDB - PostgreSQL - AWS RDS",
   ];
   
@@ -30,13 +30,13 @@ const Header = () => {
     Brian Taylor
 </div>
   <br />
-  <div className="glitch" data-text="Software Engineer" style={{ fontSize: '6vw' }}>Software Engineer</div>
+  <div className="glitch" data-text="Software Engineer" style={{ fontSize: '4vw' }}>Software Engineer</div>
   <hr className="w-1/2 border-gray-200 my-4" />
-  <div className={`glitch ${glitchTrigger ? 'glitch-effect' : ''} `} id="glitchTitle" data-text={titles[currentIndex]} style={{ fontSize: '5vw' }}>
+  <div className={`glitch ${glitchTrigger ? 'glitch-effect' : ''} `} id="glitchTitle" data-text={titles[currentIndex]} style={{ fontSize: '3.5vw' }}>
         {titles[currentIndex]}
       </div>
       <br />
-      <div className= "glitch text-[2.5vw] md:text-[2.5vw] lg:text-lg font-light" data-text={skillsForTitles[currentIndex]} style={{ color:'white' }}>
+      <div className= "glitch text-[2vw] md:text-[2vw] lg:text-lg font-light" data-text={skillsForTitles[currentIndex]} style={{ color:'white' }}>
         {skillsForTitles[currentIndex]}
     </div>
 
