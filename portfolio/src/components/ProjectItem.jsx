@@ -94,8 +94,14 @@ const ProjectItem = ({ project }) => {
 {/* row 2 */}
 
 <div className="project-item w-full relative rounded-lg overflow-hidden">
-<div ref={projectRef}>
-{isInView && <ModelViewer modelUrl={project.model} />}
+<div ref={projectRef}
+  style={{ minHeight: '400px' }} 
+>
+  {isInView ? (
+    <ModelViewer modelUrl={project.model} />
+  ) : (
+    <div style={{ height: '100%' }}></div> 
+  )}
 </div>
     {isVideoPlaying && (
       <div className="absolute top-20 left-5 md:top-6 md:left-3 w-[90%] md:w-full max-h-full overflow-hidden" >
