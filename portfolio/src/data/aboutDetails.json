@@ -2,13 +2,13 @@
         "name": "Brian Taylor",
         "role": "Full Stack Developer",
         "description": "Welcome! I’m Brian Taylor, a Full Stack Developer focused on building scalable, visually appealing web applications. I create software solutions that balance functionality with design, working across the full stack to bring ideas to life.",
-        "imageUrl": "assets/me3.png", 
-        "resumeUrl": "brian-taylor-resume.pdf",
+        "imageUrl": "assets/photo.png", 
+        "resumeUrl": "assets/brian-taylor-resume.pdf",
         "resumeDoc": "https://docs.google.com/document/d/1GraOy9czTcyPxVfR26UFOd8lBwiRAl0i2ji9WC_lnQE/edit?usp=sharing", 
         "fullstack": "I develop web applications with modern technologies and have a solid grasp of key frameworks. My curiosity and commitment to lifelong learning keep me up-to-date with the latest in tech.",
         "experience": "I have experience with web applications, mobile apps, and APIs. I thrive in both team and solo projects, adapting quickly to fast-paced environments to meet deadlines.",
         "backend": "As a Back-End Developer, I specialize in building APIs and web services with modern technologies. I’m skilled in database management and data modeling, proficient in both SQL and NoSQL.",
         "education": "I have a certification in Software Engineering from a 500+ hour program focused on product development, object-oriented programming, MVC frameworks, data modeling, and teamwork.",
-       "interests": "I'm passionate about technology and software development, and I continuously learn new technologies. I enjoy working on diverse projects and seek opportunities for growth.",
+        "interests": "I'm passionate about technology and software development, and I continuously learn new technologies. I enjoy working on diverse projects and seek opportunities for growth.",
         "softSkills": "I possess excellent communication skills and collaborate effectively with both technical and non-technical teams. I am a fast learner, eager to grow, and enjoy working together to achieve shared goals."
     }
