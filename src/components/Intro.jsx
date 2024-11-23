@@ -12,7 +12,7 @@ const Intro = () => {
                 Here you can find some of my projects and contact information.
             </p>
             
-            <h3 className="intro-call-to-action text-xl md:text-2xl font-light">
+            <h3 className="text-xl md:text-2xl font-light">
                 Let's build something <span className="highlight text-red-300 font-semibold">together!</span>
             </h3>
         </div>

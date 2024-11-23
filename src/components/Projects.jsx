@@ -7,9 +7,14 @@ const Projects = () => {
   return (
     <>
     <div className="projects-header">
-    <div className="glitch" data-text="Projects" style={{ fontSize: '30px' }}>Projects</div>
+      <div
+        className="glitch font-bold text-3xl md:text-4xl"
+        data-text="Projects">
+        Projects
       </div>
-    
+    </div>
+
+
     <div>
       {sortedProjects.map(project => (
         <ProjectItem key={project.id} project={project} />

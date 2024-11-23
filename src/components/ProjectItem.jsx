@@ -46,7 +46,7 @@ const ProjectItem = ({ project }) => {
 <>
 
 {/* row 1 */}
-<h2 className="project-title text-2xl md:text-3xl lg:text-4xl font-semibold">
+<h2 className="project-title text-2xl mt-10 md:text-3xl lg:text-4xl font-semibold">
     {project.title}
 </h2>
 <p className="project-card-tech text-sm md:text-base lg:text-lg text-gray-600">
@@ -60,38 +60,49 @@ const ProjectItem = ({ project }) => {
   position: 'relative'  
 }}>  
 
-
-
-
-<div className="project-card bg-gray-900 text-white rounded-lg shadow-lg p-6 space-y-4">
-
-    <p className="project-card-title text-custom text-light">{project.description}</p>
-    <hr/>
-
-  <div className="card-body space-y-4 text-gray-300">
-    <div className="card-technologies">
-      <h5 className="text-lg uppercase font-semibold text-white">Challenges</h5>
-      <p className="text-base">{project.challenges}</p>
+<div className="project-card bg-gray-900 text-white rounded-lg shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl">
+  <div className="p-2">
+    <div className="mb-4">
+      <p className="text-xl font-bold text-white mb-2">{project.title}</p>
+      <p className="text-gray-300 text-base">{project.description}</p>
     </div>
-    <div className="card-info">
+    
+    <div className="space-y-4 border-t border-gray-700 pt-2">
+      <div className="card-challenges">
+        <h5 className="text-md uppercase font-semibold text-gray-200 mb-2">Challenges</h5>
+        <p className="text-gray-300 text-base">{project.challenges}</p>
+      </div>
+      
       <div className="card-solutions">
-        <h5 className="text-lg uppercase font-semibold text-white">Solution</h5>
-        <p className="text-base">{project.solution}</p>
+        <h5 className="text-md uppercase font-semibold text-gray-200 mb-2">Solution</h5>
+        <p className="text-gray-300 text-base">{project.solution}</p>
       </div>
     </div>
   </div>
 
-  <div className="project-card-footer flex justify-between">
-    <a href={project.github} target="_blank" rel="noopener noreferrer" className="card-link code-link text-blue-400 hover:underline">
-      Check out the code
-    </a>
-    <a href={project.link} target="_blank" rel="noopener noreferrer" className="card-link project-link text-blue-400 hover:underline">
-      Check out the project
-    </a>
-  </div>
+  
+  <div className="project-card-footer flex justify-between items-center">
+  <a 
+    href={project.github} 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="flex text-center card-link code-link duration-200"
+  > 
+  <i className="fab fa-github mr-2 icon"></i>
+    GitHub
+  </a>
+  <a 
+    href={project.link} 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="flex items-center card-link project-link duration-200"
+  >
+    <i className="fab fa-chrome mr-2 text-white text-3xl"></i>
+    Live Project
+  </a>
+</div>
 </div>
 
-{/* row 2 */}
 
 <div className="project-item w-full relative rounded-lg overflow-hidden">
 <div ref={projectRef}

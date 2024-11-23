@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "title": "Front End Developer",
+        "description": "aboutDetails.fullstack",
+        "backTitle": "Skill Level",
+        "skills": [
+            { "name": "HTML5", "level": "100%" },
+            { "name": "React", "level": "90%" },
+            { "name": "JavaScript", "level": "90%" },
+            { "name": "Tailwind CSS", "level": "90%" },
+            { "name": "SASS/CSS", "level": "80%" },
+            { "name": "Bootstrap", "level": "100%" }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Back End Developer",
+        "description": "aboutDetails.backend",
+        "backTitle": "Skill Level",
+        "skills": [
+            { "name": "Node.js", "level": "90%" },
+            { "name": "Express", "level": "80%" },
+            { "name": "MongoDB", "level": "100%" },
+            { "name": "PostgresSQL", "level": "60%" },
+            { "name": "Django", "level": "90%" },
+            { "name": "REST", "level": "90%" }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Soft Skills",
+        "description": "aboutDetails.softSkills",
+        "backTitle": "Skill Level",
+        "skills": [
+            { "name": "Creativity", "level": "100%" },
+            { "name": "Communication", "level": "90%" },
+            { "name": "Teamwork", "level": "80%" },
+            { "name": "Adaptability", "level": "100%" },
+            { "name": "Problem Solving", "level": "100%" },
+            { "name": "Time Management", "level": "75%" }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Experience",
+        "description": "aboutDetails.experience",
+        "backTitle": "Education",
+        "backDescription": "aboutDetails.education"
+    }
+]
