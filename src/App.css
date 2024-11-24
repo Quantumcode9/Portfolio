@@ -64,7 +64,7 @@ div {
 
 .glitch {
   margin: 0 auto;
-  color: #e1afaf ;
+  color: #edbabf ;
   position: relative;
   display: flex;
   justify-content: center;
@@ -564,7 +564,7 @@ and (max-width: 768px) {
 
 
 .skill-level-bar {
-  background-color: #f1aeb5a7;
+  background-color: #f1aeb5;
   color: #242424;
   padding: 1px;
   border-radius: 5px;
@@ -594,11 +594,18 @@ and (max-width: 768px) {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 20px;
+  padding: 10px;
   background-color: #242424;
   color: white;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 768px) {
+  .contact-form {
+    margin-bottom: 20px;
+  }
+  
 }
 
 .contact-form input, .contact-form textarea {
@@ -609,6 +616,7 @@ and (max-width: 768px) {
   background-color: #242424;
   color: white;
 }
+
 
 
 /* SOCIAL MEDIA ICONS */
@@ -626,7 +634,7 @@ and (max-width: 768px) {
   font-size: 1.2em;
 }
 .contact-links a:hover {
-  color: #008dd4;
+  color: #f1aeb5;
 }
 
 .fa-github, .fa-linkedin, .fa-twitter .fa-chrome {
@@ -637,3 +645,11 @@ and (max-width: 768px) {
 
 
 
+.submit-button {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f1aeb5;
+  color: #242424;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
