@@ -100,7 +100,7 @@ const ProjectItem = ({ project }) => {
         <i className="fab fa-chrome mr-2 text-white text-3xl"></i>
         Live Project
       </a>
-      </div>`
+      </div>
     </div>
 
     <div className="project-item w-full relative rounded-lg overflow-hidden">
