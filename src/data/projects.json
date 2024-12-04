@@ -71,7 +71,7 @@
       "description": "An interactive system for real-time environmental monitoring, visualizing air quality, temperature, and humidity, with user-friendly displays and timely alerts. 🏆 1st place Hackathon winner!",
       "imageUrl": "https://github.com/Quantumcode9/waterwars/static/main.png",
       "technologies": ["React", "Next.js", "Tailwind CSS", "PostgreSQL", "Prisma", "WeatherAPI"],
-      "link": "https://water-wars-psi.vercel.app",
+      "link": "https://water-wars-nu.vercel.app",
       "model": "/models/WeatherApp.glb",
       "github": "https://github.com/Quantumcode9/water-wars",
       "challenges": "Limited TypeScript experience made it challenging to manage type errors, data integration, and API calls in a dispersed team setting.",
