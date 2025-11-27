@@ -1,0 +1,117 @@
+[
+  {
+    "id": 1,
+    "title": "PlotDevise",
+    "description": "PlotDevise is an innovative all in one creative writing platform that enables authors to seamlessly craft, organize, and visualize their stories. With integrated tools for character development, plot structuring, and world-building, PlotDevise empowers writers to bring their narratives to life in a cohesive and engaging manner.",
+    "imageUrl": "/assets/dashboard.png",
+    "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "MongoDB"],
+    "link": "https://your-link.com",
+    "github": "https://github.com/your-repo",
+    "challenges": "Many complex features had to work together seamlessly while maintaining an intuitive user experience. Ensuring data consistency across modules and optimizing performance for large projects were significant hurdles.",
+    "solution": "To overcome these challenges, I designed a modular architecture allowing independent development and testing of features. Implemented efficient data fetching and caching strategies to enhance performance. Prioritized user-centric design principles to keep the interface intuitive despite the platform's complexity."
+  },
+  {
+    "id": 2,
+    "title": "Screenwriting Module",
+    "description": "This module is specifically designed for screenwriters. And easily the most difficult, yet rewarding, project I’ve faced. It includes features such as industry-standard formatting, act and scene organization with quick navigation for both,  character tracking, integrated thesaurus, inline AI assistance, word frequency analysis,  collapsible scene headings, content aware pagination and much more. ",
+    "imageUrl": "/assets/screenplay-module.png",
+    "technologies": ["Tiptap", "MongoDB"],
+    "challenges": "Ensuring real-time updates and maintaining data integrity required robust backend solutions. Building over 40+ Tiptap custom extensions to handle the formatting, elements, and features demanded deep understanding of the library. Getting the PDF export functional was another complex task.",
+    "solution": "To address these challenges, I built one source of truth to handle all element rendering. And spent a ridiculous amount of time reverse engineering other software."
+  },
+  {
+    "id": 3,
+    "title": "Novel Module",
+    "description": "This module within is tailored for writers working on novel or short stories. Features chapter organization, quick navigation, character tracking, integrated thesaurus, inline AI assistance, word frequency analysis, and narrative coherence tools.",
+    "imageUrl": "/assets/novel-module.png",
+    "technologies": ["Tiptap", "MongoDB"],
+    "challenges": "Managing large documents with multiple chapters efficiently, implementing non-intrusive context-aware AI assistance, and optimizing word frequency tracking and thesaurus lookup for performance.",
+    "solution": "Built scalable data architecture with lazy loading for large documents. Implemented context-aware AI providing style-aligned suggestions. Utilized optimized algorithms and caching strategies for instant thesaurus and word frequency access without performance degradation."
+  },
+
+ {  "id": 4,
+    "title": "Outlining & Character Module",
+    "description": "This module was the first thing I built within PlotDevise. The goal was to create a space where writers could brainstorm and organize their ideas before diving into the actual writing process. It provides tools for outlining plot points, developing character profiles, and structuring story arcs.",
+     "imageUrl": "/assets/outlining-module.png",
+    "technologies": ["Tiptap", "MongoDB", "Rechart"],
+    "challenges": "Designing an intuitive UI that balances flexibility with structure, implementing dynamic outlining features that adapt to various storytelling styles, and ensuring seamless integration with other modules for data consistency.",
+    "solution": "Created a user-friendly interface with customizable templates to accommodate different outlining methods. Established a centralized data model to ensure smooth data flow between modules."
+  },
+
+  {
+    "id": 5,
+    "title": "World-Building Module",
+    "description": "This module focuses on helping writers create detailed settings and worlds for their stories. It offers tools for mapping out locations, developing cultures, and establishing rules for the fictional universe, enabling writers to build immersive and consistent worlds that enhance their narratives.",
+    "imageUrl": "/assets/worldbuilding-module.png",
+    "technologies": [ "Tiptap", "MongoDB" ],
+    "challenges": "Designing intuitive UI for complex, interconnected world-building elements while maintaining data consistency across locations, cultures, and rule systems.",
+    "solution": "Implemented modular interface allowing focused work on individual world aspects. Built interactive mapping tools with visual feedback for spatial organization. Designed centralized database structure linking related elements to ensure consistency across the world-building system."
+  },
+
+  {
+    "id": 6,
+    "title": "AI Integration",
+    "description": "AI-powered writing assistant providing intelligent suggestions, in-editor edits, and brainstorming support. Features both chat interface and seamless project-level integration for context-aware assistance.",
+    "imageUrl": "/assets/chat-interface.png",
+    "technologies": ["OpenAI API", "Next.js", "TypeScript"],
+    "challenges": "Ensuring AI suggestion quality while maintaining user control, optimizing real-time feedback without disrupting writing flow, and balancing automation with creative agency.",
+    "solution": "Implemented streaming AI responses with user feedback loops for continuous improvement. Designed accept/modify/reject workflows to preserve writer control. Optimized API calls and leveraged edge computing for minimal latency."
+  },
+  {
+  "id": 7,
+  "title": "Project Management System",
+  "description": "The project management system for writers handling multiple projects with nested hierarchies. Supports complex organizational structures through recursive schema architecture, centralizing all projects, subprojects, and tasks.",
+  "imageUrl": "/assets/projects-image.png",
+  "technologies": ["MongoDB", "Next.js", "TypeScript"],
+  "challenges": "Building performant nested schema supporting deep hierarchies while keeping the UI intuitive despite complex data structures and relationships.",
+  "solution": "Implemented recursive MongoDB document structures with strategic indexing and pagination. Designed collapsible sections and breadcrumb navigation for hierarchy clarity and smooth performance at any nesting depth."
+},
+{
+  "id": 8,
+  "title": "Public Domain Finder",
+  "description": "An innovative tool  designed to help writers locate public domain and fair use material for adaptation and creative reinterpretation. Using the Gutendex API, it lets users search thousands of works, find promising sources, and explore adaptation possibilities while staying within copyright limits.",
+  "imageUrl": "/assets/public-domain.png",
+  "technologies": ["Gutendex API", "React", "TypeScript"],
+  "challenges": "Integrating the Gutendex API meant working with large datasets and building efficient search features. Designing an interface that made a massive library feel accessible and relevant to writers required additional care.",
+  "solution": "The interface provides previews and detailed metadata so writers can evaluate material quickly. Caching was added to improve performance, cut down on API calls, and give users faster access to frequently viewed works."
+},
+{
+  "id": 9,
+  "title": "Character Name Generator",
+  "description": "This tool helps writers quickly generate authentic character names, offering suggestions from a diverse database of over 100,000 combinations. Simple but effective, it streamlines the naming process so writers can focus on storytelling.",
+  "imageUrl": "/assets/cn-gen.png",
+  "technologies": ["React", "TypeScript"],
+  "challenges": "Ensuring name diversity and cultural authenticity while keeping the interface simple and fast for users seeking quick suggestions.",
+  "solution": "I built a lightweight React component that fetches random names from a pre-compiled list stored locally, ensuring instant response times."
+},
+{
+  "id": 10,
+  "title": "Article System",
+  "description": "A fully-featured content platform  publishing and consuming educational articles. Enables knowledge sharing, community engagement, and expertise exchange among writers.",
+  "imageUrl": "/assets/articles.png",
+  "technologies": ["TanStack Query", "MongoDB", "Next.js", "Tiptap"],
+  "challenges": "Building a scalable article system that could handle user-generated content while maintaining performance, implementing efficient search and categorization, and handling large article volumes",
+  "solution": "Leveraged TanStack Query for efficient data fetching and caching. Built MongoDB schema supporting full-text search, tags, and categorization. Implemented pagination and infinite scroll for smooth performance at scale."
+},
+{
+  "id": 11,
+  "title": "Collaboration and Connect",
+  "description": "A social networking module that enables writers to discover like-minded creators, form partnerships, and collaborate on projects. Enables profile discovery, work sharing, feedback exchange, and team-based creative work.",
+  "imageUrl": "/assets/profile-connect.png",
+  "technologies": ["MongoDB", "Next.js", "WebSockets"],
+    "challenges": "Balancing meaningful connections with privacy/security, implementing real-time collaboration updates, and managing granular permissions for shared projects.",
+  "solution": "Built profile system with granular privacy controls and role-based permissions. Implemented WebSocket-based real-time updates for collaboration activities. Designed intelligent notification system to keep users informed without overwhelming them."
+
+},
+{
+  "id": 12,
+  "title": "Real-Time Messenger",
+  "description": "A sophisticated messaging system featuring threaded conversations and real-time updates through polling. This communication tool enables writers to have organized discussions about projects, provide feedback, and maintain ongoing conversations with collaborators, all within the PlotDevise platform.",
+  "imageUrl": "/assets/image12.png",
+  "technologies": ["MongoDB", "Next.js", "React", "Polling"],
+  "challenges": "Implementing real-time functionality through polling rather than WebSockets required careful optimization to balance responsiveness with server load. Managing threaded conversations and ensuring messages were delivered reliably while maintaining performance was technically complex.",
+  "solution": "I built a focused search and filtering system that lets users browse by author, genre, language, and publication date. The interface provides previews and detailed metadata so writers can evaluate material quickly. Caching was added to improve performance, cut down on API calls, and give users faster access to frequently viewed works."
+}
+
+
+]

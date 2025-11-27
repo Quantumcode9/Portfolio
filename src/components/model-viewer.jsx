@@ -1,60 +1,38 @@
-import React, { useEffect, useRef } from 'react';
+import React, { Suspense, useRef } from 'react';
+import { Canvas, useFrame } from '@react-three/fiber';
+import { useGLTF, OrbitControls } from '@react-three/drei';
 
 
+const FloatingModel = ({ url }) => {
+  const { scene } = useGLTF(url);
+  const modelRef = useRef();
 
-
-const ModelViewer = ({ modelUrl, handleClick }) => {
-    const modelRef = useRef(null);
-    useEffect(() => {
-        const modelElement = modelRef.current;
-
-        const handleClick = (event) => {
-            console.log('Model clicked!', event);
-            modelElement.cameraOrbit = '265deg 119deg 1m'; 
-        };
-        modelElement.addEventListener('click', handleClick);
-
-        return () => {
-            modelElement.removeEventListener('click', handleClick);
-        }
-      }, [handleClick]);
-
-
-
-    return (
-        <model-viewer
-  ref={modelRef}
-  src={modelUrl}
-  alt="A 3D model of a laptop"
-  ios-src={modelUrl}
-  environment-image="neutral"
-  exposure="1" 
-    shadow-color="#000"
-  disable-tap
-  shadow-intensity="1"
-  shadow-softness="1"
-  disable-pan
-  disable-zoom
-  camera-controls
-  camera-orbit="265deg 100deg 25m"
-  min-camera-orbit="auto 100deg auto"
-  max-camera-orbit="auto 100deg auto"
-  style={{
-    width: '100%',
-    height: '400px',
-    border: '1px solid #ccc',
-    transition: 'all 0.3s ease',
-  }}
-  onPointerOver={() => {
-    modelRef.current.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.3)';
-    modelRef.current.style.border = '1px solid #999';
-  }}
-  onPointerOut={() => {
-    modelRef.current.style.boxShadow = '';
-    modelRef.current.style.border = '1px solid #ccc';
-  }}
-></model-viewer>
-    );
+  // Subtle animation: float up and down, gentle rotation
+  useFrame(({ clock }) => {
+    if (modelRef.current) {
+      const t = clock.getElapsedTime();
+      modelRef.current.rotation.y = Math.sin(t / 4) * 0.2;
+      modelRef.current.position.y = -35 + Math.sin(t) * 0.2;
+    }
+  });
+  return <primitive ref={modelRef} object={scene} scale={8}   rotation={[0, Math.PI / 8, 0]}  position={[10, -35, 0]}  />;
 };
 
-export default ModelViewer;
+const Static3DShowcase = ({ modelUrl }) => {
+  return (
+    <div style={{ width: '100%', height: '400px' }}>
+      <Canvas camera={{ position: [-50, 0, 20], fov: 50 }} dpr={[1, 2]} gl={{ antialias: true }}>
+        <ambientLight intensity={1.5} />
+        <directionalLight position={[10, 10, 10]} intensity={2} />
+        <directionalLight position={[-10, -10, -10]} intensity={1} />
+        <pointLight position={[0, 10, 0]} intensity={1} />
+        <spotLight position={[20, 20, 20]} intensity={1.5} angle={0.3} penumbra={0.1} />
+        <Suspense fallback={null}>
+          <FloatingModel url={modelUrl} />
+        </Suspense>
+      </Canvas>
+    </div>
+  );
+};
+
+export default Static3DShowcase;

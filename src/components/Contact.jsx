@@ -13,88 +13,118 @@ const handleFlip = (id) => {
 return (
     <>
     {/* Header */}
-<div className="projects-header text-center py-6">
-    <div
-    className="glitch font-bold text-3xl md:text-4xl"
-    data-text="Contact"
-    >
-    Contact
-    </div>
-</div>
-
-{/* Main Contact Section */}
-<div className="contact-content grid gap-6 px-4 py-10 bg-[#242424] rounded-lg text-white shadow-lg md:grid-cols-2">
-{/* Contact Info Section */}
-    <div className="contact-info flex flex-col items-center gap-6 md:row-span-2">
-        {/* Card 1: Get in Touch */}
-        <ContactCards
-        id={2}
-        flippedId={flippedId}
-        handleFlip={handleFlip}
-        frontContent={
-        <div className="flex flex-col items-center justify-center h-full gap-4 px-4 text-center">
-            <h2 className="text-lg font-semibold">Get in Touch</h2>
-                <p className="text-gray-300">
-                    Reach out using the contact form below. I’m always excited to
-                    connect and explore new opportunities!
-                </p>
+    <div className="projects-header text-center py-8">
+        <div
+        className="glitch font-bold text-4xl md:text-5xl mb-4"
+        data-text="Let's Connect"
+        >
+        Let's Connect
         </div>
-    }
-            backContent={
-            <div className="flex flex-col items-center justify-center h-full gap-4 px-4 text-center">
-                <h2 className="text-lg font-semibold">Let’s Collaborate</h2>
-                    <p className="text-gray-300">
-                    Use the form or find me on LinkedIn and GitHub. Let’s build something awesome together!
+        <p className="text-gray-200 text-lg max-w-2xl mx-auto">
+            Ready to bring your ideas to life? Let's discuss your next project and create something amazing together.
+        </p>
+    </div>
+
+    {/* Main Contact Section */}
+    <div className="contact-content grid gap-8 px-6 py-12 bg-[#242424] rounded-2xl text-white shadow-2xl md:grid-cols-2 relative z-0 mb-20">
+        {/* Contact Info Section */}
+        <div className="contact-info flex flex-col items-center gap-8 md:row-span-2 relative">
+            {/* Card 1: Get in Touch */}
+            <ContactCards
+            id={2}
+            flippedId={flippedId}
+            handleFlip={handleFlip}
+            frontContent={
+                <div className="flex flex-col items-center justify-center h-full gap-3 px-4 text-center">
+                    <div className="w-12 h-12 bg-[#f1aeb5] rounded-full flex items-center justify-center mb-1">
+                        <i className="fas fa-paper-plane text-xl text-[#242424]"></i>
+                    </div>
+                    <h2 className="text-lg font-semibold text-[#f1aeb5]">Get in Touch</h2>
+                    <p className="text-gray-300 text-sm leading-snug">
+                        Ready to turn your vision into reality? Drop me a message!
                     </p>
-            </div>
-    }
-    />
-    {/* Card 2: Connect with Me */}
-    <ContactCards
-    id={3}
-    flippedId={flippedId}
-    handleFlip={handleFlip}
-    frontContent={
-        <div className="flex flex-col items-center justify-center h-full gap-4 px-4 text-center">
-            <h2 className="text-lg font-semibold">Connect with Me</h2>
-            <p className="text-gray-300">
-                Find me on LinkedIn and GitHub to see more of my work and
-                experience.
-            </p>
-            <i className="fas fa-chevron-circle-right text-lg mt-2 transition-transform duration-300 hover:rotate-90 hover:text-[#b5b5b5]"></i>
+                    <div className="flex items-center text-xs text-[#f1aeb5] mt-1">
+                        <span>Click to explore</span>
+                        <i className="fas fa-arrow-right ml-2"></i>
+                    </div>
+                </div>
+            }
+            backContent={
+                <div className="flex flex-col items-center justify-center h-full gap-3 px-4 text-center">
+                    <div className="w-12 h-12 bg-[#f1aeb5] rounded-full flex items-center justify-center mb-1">
+                        <i className="fas fa-handshake text-xl text-[#242424]"></i>
+                    </div>
+                    <h2 className="text-lg font-semibold text-[#f1aeb5]">Let's Collaborate</h2>
+                    <p className="text-gray-300 text-sm leading-snug">
+                        I'm here to help bring your ideas to life. Let's create something amazing!
+                    </p>
+                </div>
+            }
+            />
+            
+            {/* Card 2: Connect with Me */}
+            <ContactCards
+            id={3}
+            flippedId={flippedId}
+            handleFlip={handleFlip}
+            frontContent={
+                <div className="flex flex-col items-center justify-center h-full gap-3 px-4 text-center">
+                    <div className="w-12 h-12 bg-[#f1aeb5] rounded-full flex items-center justify-center mb-1">
+                        <i className="fas fa-network-wired text-xl text-[#242424]"></i>
+                    </div>
+                    <h2 className="text-lg font-semibold text-[#f1aeb5]">Connect with Me</h2>
+                    <p className="text-gray-300 text-sm leading-snug">
+                        Find me on LinkedIn and GitHub to see more of my work.
+                    </p>
+                    <div className="flex items-center text-xs text-[#f1aeb5] mt-1">
+                        <span>Flip to connect</span>
+                        <i className="fas fa-chevron-circle-right ml-2"></i>
+                    </div>
+                </div>
+            }
+            backContent={
+                <div className="contact-links flex flex-col items-center gap-4 py-4">
+                    <div className="flex items-center group">
+                        <div className="w-10 h-10 bg-[#f1aeb5] rounded-full flex items-center justify-center mr-3">
+                            <i className="fab fa-linkedin text-lg text-[#242424]"></i>
+                        </div>
+                        <a
+                            href={contact.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-white text-base hover:text-[#f1aeb5] transition-colors duration-300"
+                        >
+                            LinkedIn Profile
+                        </a>
+                    </div>
+                    <div className="flex items-center group">
+                        <div className="w-10 h-10 bg-[#f1aeb5] rounded-full flex items-center justify-center mr-3">
+                            <i className="fab fa-github text-lg text-[#242424]"></i>
+                        </div>
+                        <a
+                            href={contact.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-white text-base hover:text-[#f1aeb5] transition-colors duration-300"
+                        >
+                            GitHub Repository
+                        </a>
+                    </div>
+                </div>
+            }
+            />
         </div>
-    }
-    backContent={
-        <div className="contact-links flex flex-col items-center gap-5">
-            <p className="flex items-center">
-                <i className="fab fa-linkedin mr-2"></i>
-                <a
-                href={contact.linkedin}
-                className="text-white text-base hover:text-[#008dd4] transition-colors duration-300"
-                >
-                LinkedIn
-                </a>
-            </p>
-            <p className="flex items-center">
-                <i className="fab fa-github mr-2"></i>
-                <a
-                href={contact.github}
-                className="text-white text-base hover:text-[#008dd4] transition-colors duration-300"
-                >
-                GitHub
-                </a>
-            </p>
-        </div>
-    }
-    />
-</div>
 
-  {/* Form Section */}
-    <div className="contact-form border p-4 rounded-lg bg-white text-black">
-        <Form />
+        {/* Form Section */}
+        <div className="contact-form relative bg-[#1a1a1a] p-8 rounded-2xl shadow-xl border border-gray-700">
+            <div className="mb-6">
+                <h3 className="text-2xl font-bold text-[#f1aeb5] mb-2">Send Me a Message</h3>
+                <div className="w-16 h-1 bg-[#f1aeb5] rounded-full"></div>
+            </div>
+            <Form />
+        </div>
     </div>
-</div>
-</>
+    </>
 );
 };
 

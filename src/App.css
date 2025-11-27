@@ -313,6 +313,7 @@ div {
   background-color: #242424;
 }
 
+
 .projects-container {
   
   display: flex;
@@ -323,11 +324,35 @@ div {
 }
 
 .project-item {
-
   padding: 10px;
   border-radius: 8px;
   transition: transform 0.2s;
   background-color: #242424;
+  max-width: 1600px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  .project-item {
+    padding: 5px;
+  }
+}
+
+.project-media-container {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.project-media-container img,
+.project-media-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  display: block;
 }
 
 .project-title {
@@ -337,7 +362,7 @@ div {
 
 .project-image {
   width: 100%;
-  height: 200px;
+  height: 300px;
   object-fit: cover;
   border-radius: 5px;
 }
@@ -367,7 +392,22 @@ div {
   color: white;
   padding: 1em;
   border-radius: 8px;
-  overflow: hidden; 
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* On extra-large screens, prevent the card from stretching too wide */
+@media screen and (min-width: 1280px) {
+  .project-card {
+    max-width: 650px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .project-card {
+    padding: 0.75em;
+    gap: 0.75rem;
+  }
 }
 
 .project-card-header {
@@ -447,20 +487,30 @@ div {
   transition: background-color 0.3s;
 }
 
-
-/* RESPONSIVE STYLES */
-
-@media screen and (max-width: 768px) {
-  .project-card {
-    grid-template-columns: 1fr; 
-  }
+/* Custom scrollbar for tab navigation */
+.overflow-x-auto {
+  scrollbar-width: thin;
+  scrollbar-color: #b5b5b5 #242424;
 }
 
-@media (max-width: 768px) {
-  .project-item {
-    flex-direction: column-reverse;
-  }
+.overflow-x-auto::-webkit-scrollbar {
+  height: 6px;
 }
+
+.overflow-x-auto::-webkit-scrollbar-track {
+  background: #242424;
+  border-radius: 3px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb {
+  background: #b5b5b5;
+  border-radius: 3px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb:hover {
+  background: #f1aeb5;
+}
+
 
 
 

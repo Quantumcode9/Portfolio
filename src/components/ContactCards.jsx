@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ContactCards = ({ id, flippedId, handleFlip, frontContent, backContent, width = 'w-full md:w-[26rem]', height = 'h-[12rem]' }) => {
+const ContactCards = ({ id, flippedId, handleFlip, frontContent, backContent, width = 'w-full md:w-[26rem]', height = 'h-[14rem]' }) => {
     return (
         <div
         className={`relative ${width} ${height} perspective mx-auto`}
@@ -12,12 +12,12 @@ const ContactCards = ({ id, flippedId, handleFlip, frontContent, backContent, wi
             }`}
         >
             {/* Front Face */}
-            <div className="absolute w-full h-full bg-[#242424] hover:bg-[#2c2c2c] rounded-lg shadow-xl p-6 backface-hidden group">
+            <div className="absolute w-full h-full bg-[#242424] hover:bg-[#2c2c2c] rounded-lg shadow-xl p-4 backface-hidden group overflow-hidden">
             {frontContent}
             </div>
 
             {/* Back Face */}
-            <div className="absolute w-full h-full bg-[#242424] rounded-lg shadow-xl flex flex-col justify-center items-center rotate-y-180 backface-hidden">
+            <div className="absolute w-full h-full bg-[#242424] rounded-lg shadow-xl flex flex-col justify-center items-center rotate-y-180 backface-hidden overflow-hidden p-4">
             {backContent}
             </div>
         </div>

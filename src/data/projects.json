@@ -1,6 +1,6 @@
  [ 
     {
-      "id": 4,
+      "id": 8,
       "title": "SellOut: E-Commerce App",
       "description": "This e-commerce application, built with the MERN stack, allows users to browse products, add them to their cart, and leave reviews.",
       "imageUrl": "https://github.com/Quantumcode9/Sellout-Client/raw/main/readme/tvs.png",
@@ -13,10 +13,10 @@
       "solution": "I used the useParams hook to get the product ID from the URL and ensured reviews were saved to the right product."
     }, 
     {
-      "id": 5,
+      "id": 6,
       "title": "Gnosis: Tv Show Tracker App",
       "description": "This app tracks and reviews your favorite TV shows using the TMDB API for detailed information. It centralizes all your TV interests.",
-      "imageUrl": "https://github.com/Quantumcode9/Project2-Gnosisapp/raw/main/Photos/Screenshot-Show.png",
+      "imageUrl": "assets/gnosis.png",
       "technologies": ["MongoDB", "Node.js", "Express"],
       "link": "https://gnosis-app.fly.dev",
       "github": "https://github.com/Quantumcode9/Project2-Gnosisapp",
@@ -26,7 +26,7 @@
 
     },
     {
-      "id": 6,
+      "id": 7,
       "title": "What's Happening: Event Planner",
       "description": "This app offers an intuitive platform for event organization, using Django and Python for the backend, Postgres for the database, and AWS S3 for storage, ensuring efficient event management.",
       "imageUrl": "https://github.com/Quantumcode9/whats-happening/raw/main/readme/photos/hub.png",
@@ -38,10 +38,10 @@
       "solution": "I addressed these challenges by focusing on clear communication and regular updates, utilizing GitHub, Slack, and Zoom for effective teamwork and successful project delivery."
     },
     {
-      "id": 3,
+      "id": 5,
       "title": "Inquizitor: Quiz App",
       "description": "Inquizitor is a responsive web app for interactive personality quizzes, including Myers-Briggs, Zodiac, and Enneagram, built with Next.js, Tailwind CSS, and OpenAI API for personalized questions and result analysis. It supports dark mode and user feedback for accuracy improvement.",
-      "imageUrl": "https://github.com/Quantumcode9/Inquizitor/static/Quiz2.png",
+      "imageUrl": "assets/inquiz.png",
       "technologies": ["Next.js", "Tailwind CSS", "OpenAI API"],
       "link": "https://inquizitor-six.vercel.app",
       "model": "/models/Inquiz2.glb",
@@ -52,10 +52,10 @@
     },
 
     { 
-      "id": 1,
+      "id": 4,
       "title": "Diagnoself: AI Symptom Checker",
       "description": "Diagnoself is an AI-powered symptom checker that helps users identify potential health conditions. Users can select symptoms by body part or manually, with recommendations tailored by age and gender using the OpenAI API.",
-      "imageUrl": "https://github.com/Quantumcode9/diagnoself/static/main.png",
+      "imageUrl": "assets/diagnose.png",
       "technologies": ["React", "Next.js", "Tailwind CSS", "OpenAI API"],
       "link": "https://diagnoself.vercel.app",
       "model": "/models/Diagnoself.glb",
@@ -66,16 +66,30 @@
   },
 
     {
-      "id": 2,
+      "id": 3,
       "title": "Cloudy with A Chance of Chaos Probability",
       "description": "An interactive system for real-time environmental monitoring, visualizing air quality, temperature, and humidity, with user-friendly displays and timely alerts. 🏆 1st place Hackathon winner!",
-      "imageUrl": "https://github.com/Quantumcode9/waterwars/static/main.png",
+      "imageUrl": "/assets/weather.png",
       "technologies": ["React", "Next.js", "Tailwind CSS", "PostgreSQL", "Prisma", "WeatherAPI"],
       "link": "https://water-wars-nu.vercel.app",
       "model": "/models/WeatherApp.glb",
       "github": "https://github.com/Quantumcode9/water-wars",
       "challenges": "Limited TypeScript experience made it challenging to manage type errors, data integration, and API calls in a dispersed team setting.",
       "solution": "We maximized TypeScript’s typing and error-checking to catch bugs early. Through close collaboration and knowledge sharing, we integrated WeatherAPI successfully, leading to a winning project."
+    },
+
+    {
+      "id": 2, 
+      "title": "Scriptstreams: A Screenplay Database",
+      "description": "A comprehensive database/archive of film and television scripts for screenwriters who learn by reading produced screenplays, pilots, and series bibles to study craft and structure.  It is rapidly growing in popularity within the screenwriting community.",
+      "imageUrl": "assets/scriptstreams.png",
+      "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "PostgresSQL", "Prisma", "AWS S3"],
+      "link": "https://scriptstreams.com",
+      "github": "https://github.com/Quantumcode9/script-stream",
+      "model": "/models/Scriptstreams-model.glb",
+      "challenges": "Manage a database of 8000+ scripts while ensuring fast search and retrieval times was a significant challenge.",
+      "solution": "I implemented efficient querying and indexing strategies to ensure fast search and retrieval times, even with a large dataset."
+
     }
 
 

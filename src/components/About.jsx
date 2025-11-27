@@ -13,11 +13,11 @@ const About = () => {
             backTitle: 'Skill Level',
             skills: [
                 { name: 'HTML5', level: '100%' },
-                { name: 'React', level: '90%' },
+                { name: 'React', level: '90%' },            
                 { name: 'JavaScript', level: '90%' },
+                { name: 'TypeScript', level: '90%' },
                 { name: 'Tailwind CSS', level: '90%' },
                 { name: 'SASS/CSS', level: '80%' },
-                { name: 'Bootstrap', level: '100%' },
             ],
         },
         {
@@ -29,7 +29,7 @@ const About = () => {
                 { name: 'Node.js', level: '90%' },
                 { name: 'Express', level: '80%' },
                 { name: 'MongoDB', level: '100%' },
-                { name: 'PostgresSQL', level: '60%' },
+                { name: 'PostgresSQL', level: '70%' },
                 { name: 'Django', level: '90%' },
                 { name: 'REST', level: '90%'},
             ],
