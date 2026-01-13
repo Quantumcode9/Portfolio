@@ -22,7 +22,7 @@ const Projects = () => {
       <Tabs defaultValue={sortedProjects[0].id.toString()} className="w-full  px-2 md:px-4">
         {/* Tab Navigation */}
         <div className="overflow-x-auto md:overflow-visible pb-2 md:flex md:justify-center">
-          <TabsList className="!flex !justify-start md:!flex-wrap md:!justify-center gap-2 mt-4 mb-8 bg-transparent md:max-w-4xl">
+          <TabsList className="!flex !justify-start md:!flex-wrap md:!justify-center gap-2 mt-8 mb-8 bg-transparent md:max-w-6xl">
             {sortedProjects.map((project) => (
               <TabsTrigger
                 key={project.id}
@@ -45,7 +45,6 @@ const Projects = () => {
    
       </Tabs>
 
-      {/* Divider */}
       <div className="projects-header">
      <div
           className="glitch font-bold text-3xl md:text-4xl"
@@ -56,10 +55,10 @@ const Projects = () => {
   
 
       {/* Second Projects Section - Features */}
-      <Tabs defaultValue={sortedFeatures[0].id.toString()} className="w-full  mt-12 px-2 md:px-4">
+      <Tabs defaultValue={sortedFeatures[0].id.toString()} className="w-full  px-2 md:px-4">
         {/* Tab Navigation */}
         <div className="overflow-x-auto md:overflow-visible pb-2 md:flex md:justify-center">
-          <TabsList className="!flex !justify-start md:!flex-wrap md:!justify-center gap-2 mt-4 mb-8 bg-transparent md:max-w-4xl">
+          <TabsList className="!flex !justify-start md:!flex-wrap md:!justify-center gap-2 mt-8 mb-8 bg-transparent md:max-w-6xl">
             {sortedFeatures.map((feature, index) => (
               <TabsTrigger
                 key={feature.id}

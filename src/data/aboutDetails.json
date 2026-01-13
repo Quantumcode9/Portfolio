@@ -1,14 +1,14 @@
     {
         "name": "Brian Taylor",
         "role": "Full Stack Developer",
-        "description": "Welcome! I’m Brian Taylor, a Full Stack Developer focused on building scalable, visually appealing web applications. I create software solutions that balance functionality with design, working across the full stack to bring ideas to life.",
+        "description": "I’m a Full Stack Developer who builds scalable production web applications that people actually use. I've created a screenplay database serving the screenwriting community, a comprehensive writing platform with AI integration and real-time collaboration, and specialized rich text editors for creative content. I work across the full stack with modern JavaScript/TypeScript, focusing on scalability and user experience.",
         "imageUrl": "assets/me2.png", 
-        "resumeUrl": "assets/brian-taylor-resume.pdf",
+        "resumeUrl": "assets/resume-brian-taylor-2025.pdf",
         "resumeDoc": "https://docs.google.com/document/d/1GraOy9czTcyPxVfR26UFOd8lBwiRAl0i2ji9WC_lnQE/edit?usp=sharing", 
-        "fullstack": "I develop web applications with modern technologies and have a solid grasp of key frameworks. My curiosity and commitment to lifelong learning keep me up-to-date with the latest in tech.",
-        "experience": "I have experience with web applications, mobile apps, and APIs. I thrive in both team and solo projects, adapting quickly to fast-paced environments to meet deadlines.",
-        "backend": "As a Back-End Developer, I specialize in building APIs and web services with modern technologies. I’m skilled in database management and data modeling, proficient in both SQL and NoSQL.",
-        "education": "I have a certification in Software Engineering from a 500+ hour program focused on product development, object-oriented programming, MVC frameworks, data modeling, and teamwork.",
-        "interests": "I'm passionate about technology and software development, and I continuously learn new technologies. I enjoy working on diverse projects and seek opportunities for growth.",
-        "softSkills": "I possess excellent communication skills and collaborate effectively with both technical and non-technical teams. I am a fast learner, eager to grow, and enjoy working together to achieve shared goals."
+        "fullstack": "I build responsive, feature-rich interfaces with React, Next.js, and Tailwind CSS. I've created custom text editors with TipTap/ProseMirror, real-time collaboration features, and complex data visualization dashboards. I focus on performance, accessibility, and creating intuitive user experiences.",
+        "experience": "I've built and deployed multiple production SaaS applications including custom rich text editing platforms, AI-integrated web apps, large scale databases. I'm comfortable working solo or in teams, and I ship fast.",
+        "backend": "I build RESTful APIs, handle authentication with OAuth, and design database schemas for both SQL and NoSQL. I've architected systems handling file storage with AWS S3, real-time messaging with WebSockets, and AI integration via OpenRouter and OpenAI APIs.",
+        "education": "Completed an intensive 500+ hour Software Engineering certification covering full-stack development, OOP, MVC frameworks, and agile team collaboration. Though, my real education comes from building projects and solving problems daily.",
+        "interests": "Outside of coding, I'm deep into developer tooling and content creation platforms. I've built custom TipTap extensions that power real-world writing applications, and I'm always experimenting with AI integration to enhance user experiences.",
+        "softSkills": "I communicate clearly with both developers and non-technical stakeholders. I work well in teams, adapt quickly to new codebases, and I'm comfortable taking ownership of features from concept to deployment."
     }

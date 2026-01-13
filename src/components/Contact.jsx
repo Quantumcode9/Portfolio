@@ -20,8 +20,8 @@ return (
         >
         Let's Connect
         </div>
-        <p className="text-gray-200 text-lg max-w-2xl mx-auto">
-            Ready to bring your ideas to life? Let's discuss your next project and create something amazing together.
+        <p className="text-gray-200 text-lg mt-2 max-w-2xl mx-auto">
+        Feel free to reach out for collaborations, inquiries, or just to say hello!
         </p>
     </div>
 
@@ -41,7 +41,7 @@ return (
                     </div>
                     <h2 className="text-lg font-semibold text-[#f1aeb5]">Get in Touch</h2>
                     <p className="text-gray-300 text-sm leading-snug">
-                        Ready to turn your vision into reality? Drop me a message!
+                        Drop me a message!
                     </p>
                     <div className="flex items-center text-xs text-[#f1aeb5] mt-1">
                         <span>Click to explore</span>

@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 
 const Header = () => {
-  const titles = ["Full-Stack Developer", "Front-End Developer", "Back-End Developer", "DB Administrator"];
+  const titles = ["Full-Stack Developer", "Front-End Developer", "Back-End Developer", "DB Administrator", "Specialized Skills"]; 
   const skillsForTitles = [
-    "JavaScript - Django - Next.js - Python - Git",
-    "CSS3 - JavaScript - React - Tailwind - EJS",
-    "Node.js - Express - REST API - OAuth - Docker",
-    "MongoDB - PostgreSQL - AWS RDS",
+    "JavaScript - Django - TypeScript - Next.js - Python - Git - Vercel",
+    "CSS3 - JavaScript - TypeScript - Tailwind - React - EJS",
+    "Node.js - Express - REST API - OAuth - Prisma",
+    "MongoDB - PostgreSQL - AWS RDS - Firebase - Supabase - NeonDB",
+    "AI Integration - ProseMirror - Data Visualization"
   ];
   
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -32,7 +33,7 @@ const Header = () => {
   <br />
   <div className="glitch" data-text="Software Engineer" style={{ fontSize: '4vw' }}>Software Engineer</div>
   <hr className="w-1/2 border-gray-200 my-4" />
-  <div className={`glitch ${glitchTrigger ? 'glitch-effect' : ''} `} id="glitchTitle" data-text={titles[currentIndex]} style={{ fontSize: '3.5vw' }}>
+  <div className={`glitch-white  ${glitchTrigger ? 'glitch-effect' : ''} `} id="glitchTitle" data-text={titles[currentIndex]} style={{ fontSize: '3.5vw' }}>
         {titles[currentIndex]}
       </div>
       <br />

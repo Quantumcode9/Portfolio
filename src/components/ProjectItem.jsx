@@ -125,7 +125,7 @@ const ProjectItem = ({ project, hideButtons = false, customFooterMessage = '' })
       )}
     </div>
 </div>
-      <div className="divider-block"></div>
+     
       </>
       );
     };

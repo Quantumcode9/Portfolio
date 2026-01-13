@@ -74,6 +74,19 @@ div {
 } 
 
 
+.glitch-white {
+  margin: 0 auto;
+  color: #ffffff ;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  animation: glitch 5s 5s infinite;
+} 
+
+
+
 .glitch::before {
   content: attr(data-text);
   position: absolute;
@@ -145,13 +158,6 @@ div {
 
 
 
-/* Glitch effect */
-.glitch-effect {
-  position: relative;
-  color: white;
-  letter-spacing: 0.1em;
-  animation: glitch 5s infinite linear alternate-reverse;
-}
 
 @keyframes glitch {
   1%{
@@ -572,7 +578,7 @@ and (max-width: 768px) {
 .profile-card,
 .about-me-card {
   background-color: #242424;
-  padding: 20px;
+  padding: 18px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -702,4 +708,8 @@ and (max-width: 768px) {
   color: #242424;
   cursor: pointer;
   transition: background-color 0.3s;
+  }
+.submit-button:hover {
+  background-color: #f0c6cb;
+  color: #161616;
 }

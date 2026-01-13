@@ -10,50 +10,87 @@ const About = () => {
             id: 1,
             title: 'Front End Developer',
             description: aboutDetails.fullstack,
-            backTitle: 'Skill Level',
+            backTitle: 'Technologies',
             skills: [
-                { name: 'HTML5', level: '100%' },
-                { name: 'React', level: '90%' },            
-                { name: 'JavaScript', level: '90%' },
-                { name: 'TypeScript', level: '90%' },
-                { name: 'Tailwind CSS', level: '90%' },
-                { name: 'SASS/CSS', level: '80%' },
+                'JavaScript',
+                'TypeScript', 
+                'React',
+                'Next.js',
+                'Tailwind CSS',
+                'HTML5',
+                'CSS3',
+                'SASS',
+                'TipTap',
+                'ProseMirror',
+                'Responsive Design',
+                'Accessibility'
             ],
         },
         {
             id: 2,
             title: 'Back End Developer',
             description: aboutDetails.backend,
-            backTitle: 'Skill Level',
+            backTitle: 'Technologies',
             skills: [
-                { name: 'Node.js', level: '90%' },
-                { name: 'Express', level: '80%' },
-                { name: 'MongoDB', level: '100%' },
-                { name: 'PostgresSQL', level: '70%' },
-                { name: 'Django', level: '90%' },
-                { name: 'REST', level: '90%'},
-            ],
-        },
+                'Node.js',
+                'Express',
+                'Python',
+                'Django',
+                'REST APIs',
+                'OAuth',
+                'WebSockets',
+                'Prisma ORM',
+                'AWS S3',
+                'OpenRouter',
+                'GraphQL',
+                'MongoDB',
+                'PostgreSQL',
+                'NeonDB',
+                'Migrations',
+                'Data Modeling',
+                'Query Optimization',
+            
+        
+        ],
+    },
         {
-            id: 3,
-            title: 'Soft Skills',
-            description: aboutDetails.softSkills,
-            backTitle: 'Skill Level',
-            skills: [
-                { name: 'Creativity', level: '100%' },
-                { name: 'Communication', level: '90%' },
-                { name: 'Teamwork', level: '80%' },
-                { name: 'Adaptability', level: '100%' },
-                { name: 'Problem Solving', level: '100%' },
-                { name: 'Time Management', level: '75%' },
-            ],
-        },
+        id: 3,
+        title: 'Soft Skills',
+        description: aboutDetails.softSkills,
+        backTitle: 'Technologies',
+        skills: [
+            'Time Management',
+            'Adaptability',
+            'Critical Thinking',
+            
+            'Attention to Detail',
+            'Project Management',
+            'Creativity',
+            'Collaboration',
+            'Communication',
+            'Agile Methodologies',
+            'Problem Solving',
+            
+
+            'Conflict Resolution'
+        ],
+    },
         {
-            id: 4,
-            title: 'Experience',
-            description: aboutDetails.experience,
-            backTitle: 'Education',
-            backDescription: aboutDetails.education,
+        id: 4,
+        title: 'Experience',
+        description: aboutDetails.experience,
+        backTitle: 'Education',
+        skills: [
+            'Software Engineering Certification - 500+ hours',
+            'Full-Stack Development',
+            'CI/CD Pipelines',
+            'OOP & MVC Frameworks', 
+            'Project Deployment',
+            'Agile Team Collaboration',
+            'Continuous Learning',       
+            'Version Control with Git',
+         
+        ],
         },
     ];
 
@@ -70,7 +107,7 @@ const About = () => {
     </div>
 
     {/* Profile Section */}
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto px-6 mb-10">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-7xl mx-auto px-6 mb-10">
         {/* Profile Card */}
         <div className="profile-card mx-auto flex justify-center">
         <div className="relative w-72 h-72 md:w-85 md:h-80 overflow-hidden shadow-lg border-2 border-red-300">
@@ -83,8 +120,11 @@ const About = () => {
         </div>
 
         {/* Description Section */}
-        <div className="about-me-card bg-gray-800 p-8 rounded-lg shadow-lg space-y-6">
-        <p className="about-me-description text-lg leading-relaxed">
+        <div className="about-me-card bg-gray-800  p-6 rounded-lg shadow-lg space-y-2 whitespace-pre-line">
+        <p className="about-me-description text-xl uppercase  mb-4 leading-relaxed whitespace-pre-line">
+            Welcome!
+        </p>
+        <p className="about-me-description text-lg leading-relaxed whitespace-pre-line text-left">
             {aboutDetails.description}
         </p>
         <div className="flex justify-center space-x-4">
