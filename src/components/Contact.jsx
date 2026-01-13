@@ -116,7 +116,7 @@ return (
         </div>
 
         {/* Form Section */}
-        <div className="contact-form relative bg-[#1a1a1a] p-8 rounded-2xl shadow-xl border border-gray-700">
+        <div className="contact-form relative p-8 rounded-2xl shadow-xl border border-[#494949] ">
             <div className="mb-6">
                 <h3 className="text-2xl font-bold text-[#f1aeb5] mb-2">Send Me a Message</h3>
                 <div className="w-16 h-1 bg-[#f1aeb5] rounded-full"></div>

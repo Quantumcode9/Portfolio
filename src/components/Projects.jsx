@@ -14,7 +14,7 @@ const Projects = () => {
         <div
           className="glitch font-bold text-3xl md:text-4xl"
           data-text="Projects">
-          Projects
+          Side Projects
         </div>
       </div>
 
@@ -46,9 +46,13 @@ const Projects = () => {
       </Tabs>
 
       {/* Divider */}
-      <div className="divider-block my-6">
-      
-      </div>
+      <div className="projects-header">
+     <div
+          className="glitch font-bold text-3xl md:text-4xl"
+          data-text="Projects">
+          Main Project
+        </div>
+        </div>
   
 
       {/* Second Projects Section - Features */}
@@ -75,7 +79,11 @@ const Projects = () => {
         {/* Tab Content - Each Feature */}
         {sortedFeatures.map((feature) => (
           <TabsContent key={feature.id} value={feature.id.toString()} className="min-h-[600px] md:min-h-[700px]">
-            <ProjectItem project={feature} />
+            <ProjectItem 
+              project={feature} 
+              hideButtons={true} 
+              customFooterMessage="Live demo and code preview available upon request"
+            />
           </TabsContent>
         ))}
       </Tabs>

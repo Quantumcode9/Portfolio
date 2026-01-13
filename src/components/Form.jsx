@@ -31,6 +31,7 @@ return (
         name="name"
         value={name}
         onChange={e => setName(e.target.value)}
+        className="focus:outline-none" 
         /><br />
         <ValidationError
             prefix="Name"
@@ -44,6 +45,7 @@ return (
             name="email"
             value={email}
             onChange={e => setEmail(e.target.value)}
+            className="focus:outline-none"
         /><br />
         <ValidationError
             prefix="Email"
@@ -56,13 +58,14 @@ return (
             name="message"
             value={message}
             onChange={e => setMessage(e.target.value)}
+            className="focus:outline-none"
         /><br />
         <ValidationError
             prefix="Message"
             field="message"
             errors={state.errors}
         />
-        <button type="submit" className='submit-button' disabled={state.submitting}>
+        <button type="submit" className='submit-button focus:outline-none' disabled={state.submitting}>
             Submit
         </button>
         {state.succeeded && <p>Thanks! I'll get back to you soon.</p>}

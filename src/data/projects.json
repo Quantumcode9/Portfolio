@@ -6,9 +6,9 @@
       "imageUrl": "https://github.com/Quantumcode9/Sellout-Client/raw/main/readme/tvs.png",
       "videoUrl": "assets/Sellout.mp4",
       "technologies": ["React", "MongoDB", "Node.js", "Express"],
-      "link": "https://sellout-final.netlify.app/",
       "github": "https://github.com/Quantumcode9/Sellout-Client",
       "model": "/models/Laptop-Iphone.glb",
+      "showLiveButton": false,
       "challenges": "I struggled to connect reviews to the correct product page, mainly in passing the product ID to the review form.",
       "solution": "I used the useParams hook to get the product ID from the URL and ensured reviews were saved to the right product."
     }, 
@@ -28,9 +28,10 @@
     {
       "id": 7,
       "title": "What's Happening: Event Planner",
-      "description": "This app offers an intuitive platform for event organization, using Django and Python for the backend, Postgres for the database, and AWS S3 for storage, ensuring efficient event management.",
+      "description": "This app offers an intuitive platform for event organization, using Django and Python for the backend, Postgres for the database, and AWS S3 for storage.",
       "imageUrl": "https://github.com/Quantumcode9/whats-happening/raw/main/readme/photos/hub.png",
       "technologies": ["Django", "Python", "Postgres","AWS S3"],
+      "showLiveButton": false,
       "link": "https://whats-happening.onrender.com",
       "model": "/models/Whats-Happening.glb",
       "github": "https://github.com/Quantumcode9/whats-happening?tab=readme-ov-file",
@@ -40,7 +41,7 @@
     {
       "id": 5,
       "title": "Inquizitor: Quiz App",
-      "description": "Inquizitor is a responsive web app for interactive personality quizzes, including Myers-Briggs, Zodiac, and Enneagram, built with Next.js, Tailwind CSS, and OpenAI API for personalized questions and result analysis. It supports dark mode and user feedback for accuracy improvement.",
+      "description": "Inquizitor is a fun little web app for interactive personality quizzes, including Myers-Briggs, Zodiac, and Enneagram. It uses the OpenAI API to generate dynamic questions and explanations based on user responses.",
       "imageUrl": "assets/inquiz.png",
       "technologies": ["Next.js", "Tailwind CSS", "OpenAI API"],
       "link": "https://inquizitor-six.vercel.app",
@@ -83,12 +84,28 @@
       "title": "Scriptstreams: A Screenplay Database",
       "description": "A comprehensive database/archive of film and television scripts for screenwriters who learn by reading produced screenplays, pilots, and series bibles to study craft and structure.  It is rapidly growing in popularity within the screenwriting community.",
       "imageUrl": "assets/scriptstreams.png",
+       "showGithubButton": false,
       "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "PostgresSQL", "Prisma", "AWS S3"],
       "link": "https://scriptstreams.com",
       "github": "https://github.com/Quantumcode9/script-stream",
       "model": "/models/Scriptstreams-model.glb",
       "challenges": "Manage a database of 8000+ scripts while ensuring fast search and retrieval times was a significant challenge.",
       "solution": "I implemented efficient querying and indexing strategies to ensure fast search and retrieval times, even with a large dataset."
+
+    },
+
+       {
+      "id": 1, 
+      "title": "OpenDraft: A Screenwriting Editor",
+      "description": "A simple web-based screenwriting editor that allows writers to create, edit, and format screenplays. It offers version control, comprehensive import options, industry-standard exports, scene navigation, and mobile support.",
+      "imageUrl": "assets/opendraft.png",
+      "showGithubButton": false,
+      "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Tiptap"],
+      "link": "https://screenwriting-app-inky.vercel.app",
+      "github": "https://github.com/Quantumcode9/screenwriting-app",
+      "model": "/models/Scripts-model.glb",
+      "challenges": "One of the biggest challenges was building an import feature that supported multiple formats while preserving screenplay formatting and structure.",
+      "solution": "I developed a comprehensive parser that recognized different text formats and converted them into a standardized format compatible with the editor."
 
     }
 

@@ -73,11 +73,11 @@ const About = () => {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto px-6 mb-10">
         {/* Profile Card */}
         <div className="profile-card mx-auto flex justify-center">
-        <div className="relative w-72 h-72 md:w-80 md:h-80 overflow-hidden shadow-lg border-2 border-red-300">
+        <div className="relative w-72 h-72 md:w-85 md:h-80 overflow-hidden shadow-lg border-2 border-red-300">
             <img
             src={aboutDetails.imageUrl}
             alt={aboutDetails.name}
-            className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+            className="w-full h-full object-cover grayscale transition-all duration-500"
             />
         </div>
         </div>

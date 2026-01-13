@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
-const ProjectItem = ({ project }) => {
+const ProjectItem = ({ project, hideButtons = false, customFooterMessage = '' }) => {
   const [isVideoPlaying, setVideoPlaying] = useState(false);
+
+  // Check if buttons should be shown (defaults to true if not specified in project data)
+  const showGithub = project.showGithubButton !== false;
+  const showLive = project.showLiveButton !== false;
+  const hasAnyButton = showGithub || showLive;
 
   const handleVideoPlay = () => {
     setVideoPlaying(true);
@@ -39,7 +44,7 @@ const ProjectItem = ({ project }) => {
         <p className="text-gray-300 text-base">{project.description}</p>
       </div>
       
-      <div className="space-y-4 border-t border-gray-700 pt-2">
+      <div className="space-y-2 border-t border-gray-700 pt-4">
         <div className="card-challenges min-h-[120px]">
           <h5 className="text-md uppercase font-semibold text-gray-200 mb-2">Challenges</h5>
           <p className="text-gray-300 text-base">{project.challenges}</p>
@@ -53,26 +58,38 @@ const ProjectItem = ({ project }) => {
     </div>
 
     
-    <div className="project-card-footer flex justify-between items-center">
-      <a 
-        href={project.github} 
-        target="_blank" 
-        rel="noopener noreferrer" 
-        className="flex text-center card-link code-link text-sm md:text-base duration-200"
-      > 
-      <i className="fab fa-github mr-2 icon"></i>
-        GitHub
-      </a>
-      <a 
-        href={project.link} 
-        target="_blank" 
-        rel="noopener noreferrer" 
-        className="flex items-center card-link project-link text-sm md:text-base duration-200"
-      >
-        <i className="fab fa-chrome mr-2 text-white text-3xl"></i>
-        Live Project
-      </a>
+    {hideButtons && customFooterMessage ? (
+      <div className="project-card-footer mx-auto flex justify-center items-center">
+        <p className="text-gray-400 text-sm md:text-base italic">
+          {customFooterMessage}
+        </p>
       </div>
+    ) : !hideButtons && hasAnyButton ? (
+      <div className={`project-card-footer flex items-center ${showGithub && showLive ? 'justify-between' : 'justify-center'}`}>
+        {showGithub && (
+          <a 
+            href={project.github} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="flex text-center card-link code-link text-sm md:text-base duration-200"
+          > 
+          <i className="fab fa-github mr-2 icon"></i>
+            GitHub
+          </a>
+        )}
+        {showLive && (
+          <a 
+            href={project.link} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="flex items-center card-link project-link text-sm md:text-base duration-200"
+          >
+            <i className="fab fa-chrome mr-2 text-white text-3xl"></i>
+            Live Project
+          </a>
+        )}
+      </div>
+    ) : null}
     </div>
 
     <div className="project-media-container w-full relative rounded-lg overflow-hidden">

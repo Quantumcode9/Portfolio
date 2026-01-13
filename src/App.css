@@ -645,7 +645,7 @@ and (max-width: 768px) {
   flex-direction: column;
   gap: 20px;
   padding: 10px;
-  background-color: #242424;
+  background-color: #353535;
   color: white;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

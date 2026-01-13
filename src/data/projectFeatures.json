@@ -106,11 +106,12 @@
 {
   "id": 12,
   "title": "Real-Time Messenger",
-  "description": "A sophisticated messaging system featuring threaded conversations and real-time updates through polling. This communication tool enables writers to have organized discussions about projects, provide feedback, and maintain ongoing conversations with collaborators, all within the PlotDevise platform.",
-  "imageUrl": "/assets/image12.png",
+  "description": "A messaging system with threaded conversations and real-time updates via polling. Enables organized project discussions, feedback, and collaboration within the platform.",
+  "imageUrl": "/assets/messages.png",
+        "videoUrl": "/assets/message-thread-720.mp4",
   "technologies": ["MongoDB", "Next.js", "React", "Polling"],
-  "challenges": "Implementing real-time functionality through polling rather than WebSockets required careful optimization to balance responsiveness with server load. Managing threaded conversations and ensuring messages were delivered reliably while maintaining performance was technically complex.",
-  "solution": "I built a focused search and filtering system that lets users browse by author, genre, language, and publication date. The interface provides previews and detailed metadata so writers can evaluate material quickly. Caching was added to improve performance, cut down on API calls, and give users faster access to frequently viewed works."
+  "challenges": "Balancing responsiveness with server load through polling presented optimization challenges. Managing threaded conversations while maintaining reliable delivery and performance required careful engineering.",
+  "solution": "Implemented adaptive polling intervals based on user activity to optimize responsiveness and server load. Designed efficient data structures for threaded conversations, ensuring quick retrieval and rendering of messages."
 }
 
 
