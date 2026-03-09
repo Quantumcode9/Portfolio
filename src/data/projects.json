@@ -96,12 +96,12 @@
 
        {
       "id": 1, 
-      "title": "OpenDraft: A Screenwriting Editor",
-      "description": "A simple web-based screenwriting editor that allows writers to create, edit, and format screenplays. It offers version control, comprehensive import options, industry-standard exports, scene navigation, and mobile support.",
-      "imageUrl": "assets/opendraft.png",
+      "title": "OpenSlug: A Screenwriting Editor",
+      "description": "A privacy-focused (local-first) screenwriting editor that allows writers to create, edit, and format screenplays. It offers version control, comprehensive import options, industry-standard exports, scene navigation, and mobile support.",
+      "imageUrl": "assets/openslug.png",
       "showGithubButton": false,
-      "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Tiptap"],
-      "link": "https://screenwriting-app-inky.vercel.app",
+      "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Tiptap", "IndexedDB"],
+      "link": "https://openslug.com",
       "github": "https://github.com/Quantumcode9/screenwriting-app",
       "model": "/models/Scripts-model.glb",
       "challenges": "One of the biggest challenges was building an import feature that supported multiple formats while preserving screenplay formatting and structure.",

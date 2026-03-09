@@ -1,9 +1,9 @@
 [
   {
     "id": 1,
-    "title": "PlotDevise",
-    "description": "PlotDevise is an innovative all in one creative writing platform that enables authors to seamlessly craft, organize, and visualize their stories. With integrated tools for character development, plot structuring, and world-building, PlotDevise empowers writers to bring their narratives to life in a cohesive and engaging manner.",
-    "imageUrl": "/assets/dashboard.png",
+    "title": "OpenSlug Studio",
+    "description": "OpenSlug Studio is a cloud-based all in one creative writing platform that enables authors to seamlessly craft, organize, and visualize their stories. With integrated tools for character development, plot structuring, and world-building, OpenSlug Studio empowers writers to bring their narratives to life in a cohesive and engaging manner.",
+    "imageUrl": "/assets/os-dash.png",
     "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "MongoDB"],
     "link": "https://your-link.com",
     "github": "https://github.com/your-repo",
@@ -31,7 +31,7 @@
 
  {  "id": 4,
     "title": "Outlining & Character Module",
-    "description": "This module was the first thing I built within PlotDevise. The goal was to create a space where writers could brainstorm and organize their ideas before diving into the actual writing process. It provides tools for outlining plot points, developing character profiles, and structuring story arcs.",
+    "description": "This module was the first thing I built within OpenSlug Studio. The goal was to create a space where writers could brainstorm and organize their ideas before diving into the actual writing process. It provides tools for outlining plot points, developing character profiles, and structuring story arcs.",
      "imageUrl": "/assets/outlining-module.png",
     "technologies": ["Tiptap", "MongoDB", "Rechart"],
     "challenges": "Designing an intuitive UI that balances flexibility with structure, implementing dynamic outlining features that adapt to various storytelling styles, and ensuring seamless integration with other modules for data consistency.",
