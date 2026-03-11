@@ -41,12 +41,9 @@ const About = () => {
                 'WebSockets',
                 'Prisma ORM',
                 'AWS S3',
-                'OpenRouter',
-                'GraphQL',
                 'MongoDB',
                 'PostgreSQL',
                 'NeonDB',
-                'Migrations',
                 'Data Modeling',
                 'Query Optimization',
             
@@ -59,96 +56,96 @@ const About = () => {
         description: aboutDetails.softSkills,
         backTitle: 'Technologies',
         skills: [
-            'Time Management',
             'Adaptability',
+            'Creativity',
             'Critical Thinking',
-            
             'Attention to Detail',
             'Project Management',
-            'Creativity',
-            'Collaboration',
             'Communication',
             'Agile Methodologies',
             'Problem Solving',
-            
-
-            'Conflict Resolution'
         ],
     },
         {
         id: 4,
         title: 'Experience',
         description: aboutDetails.experience,
-        backTitle: 'Education',
+        backTitle: 'Experience',
         skills: [
-            'Software Engineering Certification - 500+ hours',
-            'Full-Stack Development',
-            'CI/CD Pipelines',
-            'OOP & MVC Frameworks', 
-            'Project Deployment',
-            'Agile Team Collaboration',
-            'Continuous Learning',       
-            'Version Control with Git',
-         
+            'Built & deployed multiple fullstack applications',
+            'Created custom rich text editing platforms',
+            'Implemented AI-integrated web apps',
+            'Designed large scale databases',
+            'Worked solo and in teams',
         ],
-        },
+    },
     ];
 
     return (
-<section className="about-me bg-gray-900 text-gray-300 py-16">
-{/* Section Header */}
-    <div className="text-center mb-12">
-        <h2
-            className="glitch font-light text-3xl md:text-4xl"
-            data-text="About Me"
-            >
+<div className="about-me bg-gray-900 text-gray-300 py-20">
+
+    {/* Section Header */}
+    <div className="text-center mb-16 px-4">
+        <h2 className="glitch font-light text-4xl md:text-5xl mb-4" data-text="About Me">
             About Me
         </h2>
+        <div className="w-16 h-px bg-[#f1aeb5] mx-auto mt-4"></div>
     </div>
 
-    {/* Profile Section */}
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-7xl mx-auto px-6 mb-10">
-        {/* Profile Card */}
-        <div className="profile-card mx-auto flex justify-center">
-        <div className="relative w-72 h-72 md:w-85 md:h-80 overflow-hidden shadow-lg border-2 border-red-300">
-            <img
-            src={aboutDetails.imageUrl}
-            alt={aboutDetails.name}
-            className="w-full h-full object-cover grayscale transition-all duration-500"
-            />
-        </div>
+    {/* Profile + Bio */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start max-w-6xl mx-auto px-6 mb-16">
+
+        {/* Profile Image */}
+        <div className="flex flex-col items-center gap-6">
+            <div className="relative w-64 h-64 md:w-80 md:h-80 overflow-hidden shadow-2xl border border-[#f1aeb5]">
+                <img
+                    src={aboutDetails.imageUrl}
+                    alt={aboutDetails.name}
+                    className="w-full h-full object-cover grayscale transition-all duration-700"
+                />
+            </div>
+            {/* Resume buttons under photo */}
+            <div className="flex gap-3">
+                <a
+                    href={aboutDetails.resumeDoc}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-5 py-2 border border-[#f1aeb5] text-[#f1aeb5] text-sm uppercase tracking-wider rounded-sm hover:bg-[#f1aeb5] hover:text-[#1a1a1a] transition-all duration-300"
+                >
+                    View Resume
+                </a>
+                <a
+                    href={aboutDetails.resumeUrl}
+                    download
+                    className="px-5 py-2 bg-[#f1aeb5] text-[#1a1a1a] text-sm uppercase tracking-wider rounded-sm hover:bg-[#e89da6] transition-all duration-300"
+                >
+                    Download
+                </a>
+            </div>
         </div>
 
-        {/* Description Section */}
-        <div className="about-me-card bg-gray-800  p-6 rounded-lg shadow-lg space-y-2 whitespace-pre-line">
-        <p className="about-me-description text-xl uppercase  mb-4 leading-relaxed whitespace-pre-line">
-            Welcome!
-        </p>
-        <p className="about-me-description text-lg leading-relaxed whitespace-pre-line text-left">
-            {aboutDetails.description}
-        </p>
-        <div className="flex justify-center space-x-4">
-                    <a
-                        href={aboutDetails.resumeDoc}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="about-me-resume bg-gray-700 text-pink-400 px-4 py-2 rounded-md hover:bg-gray-600"
-                    >
-                        View Resume
-                    </a>
-                    <a
-                        href={aboutDetails.resumeUrl}
-                        download
-                        className="about-me-resume bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-500"
-                    >
-                        Download Resume
-                    </a>
-                    </div>
+        {/* Bio Card */}
+        <div className="bg-[#1e1e1e] border border-[#3E3E3E] rounded-lg p-8 shadow-xl space-y-4">
+            <p className="text-[#f1aeb5] text-sm uppercase tracking-widest mb-2 font-semibold">
+                Welcome!
+            </p>
+            <p className="text-gray-300 text-base leading-relaxed">
+                {aboutDetails.description}
+            </p>
         </div>
     </div>
 
-            <SkillCardGrid cardsData={cardsData} />
-        </section>
+    {/* Skill Cards */}
+    <div className="max-w-8xl mx-auto px-4 md:px-10">
+        <div className="text-center mb-8">
+            <h3 className="text-[#f1aeb5] text-sm uppercase tracking-widest font-semibold">
+                Skills &amp; Experience
+            </h3>
+        </div>
+        <SkillCardGrid cardsData={cardsData} />
+    </div>
+
+</div>
     );
 };
 
