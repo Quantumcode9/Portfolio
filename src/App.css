@@ -27,7 +27,6 @@ html, body, #root{
 section {
   position: relative;
   overflow: hidden;
-  min-height: 90vh; 
 }
 
 section:before, section:after {
@@ -37,11 +36,9 @@ section:before, section:after {
 }
 
 .header {
-  padding: 50px;
+  padding: 0;
   top: 0;
   position: relative;
-  text-align: center;
-  background-color: #b5b5b5; 
   overflow: hidden;
 }
 
@@ -307,11 +304,11 @@ div {
 }
 
 /* ProjectsSection */
+
 .projects-header {
   padding: 30px;
   top: 0;
   text-align: center;
-  background-color: #b5b5b5; 
 }
 
 #projects {
@@ -392,9 +389,10 @@ div {
 .project-card {
   display: flex;
   flex-direction: column;
+  text-align: left;
   gap: 1rem;
   width: 100%;
-  background-color: #242424;
+  background-color: #1a1a1a;
   color: white;
   padding: 1em;
   border-radius: 8px;
@@ -456,8 +454,8 @@ div {
 
 .project-link, 
 .code-link {
-  background-color: rgb(181, 181, 181);
-  color:#161616;
+  background-color: #242424;
+  color:rgb(181, 181, 181);
 }
 
 
@@ -642,19 +640,12 @@ and (max-width: 768px) {
 
 #contact {
   text-align: center;
-  background-color: #242424;
-  height: 100%;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 10px;
-  background-color: #353535;
-  color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 @media screen and (max-width: 768px) {

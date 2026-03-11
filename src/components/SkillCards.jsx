@@ -39,7 +39,7 @@ const SkillCardGrid = ({ cardsData }) => {
                                     {card.skills.map((skill, index) => (
                                         <span
                                             key={index}
-                                            className="px-2 py-1 bg-gray-700 text-white text-xs rounded-smtransition-colors"
+                                            className="px-2 py-1 bg-[#1a1a1a] border border-[#3E3E3E] text-[#f1aeb5] text-xs rounded-sm transition-colors"
                                         >
                                             {skill}
                                         </span>

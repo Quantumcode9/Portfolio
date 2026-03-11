@@ -27,30 +27,30 @@ const ProjectItem = ({ project, hideButtons = false, customFooterMessage = '' })
 <>
 
 {/* row 1 */}
-<h2 className="project-title text-2xl mt-20  md:text-3xl lg:text-4xl font-semibold">
+<h2 className="project-title text-xl  md:text-2xl lg:text-3xl font-semibold mt-16 mb-1">
     {project.title}
 </h2>
-<p className="project-card-tech text-sm md:text-base lg:text-lg text-gray-600">
-    {project.technologies.join(' - ').toUpperCase()}
+<p className="project-card-tech text-xs md:text-sm lg:text-base text-[#f1aeb5] mb-4 tracking-wider">
+    {project.technologies.join(' · ').toUpperCase()}
 </p>
 
 
 <div className="project-item grid grid-cols-1 xl:grid-cols-2 gap-6 items-start">  
 
-  <div className="project-card bg-gray-900 text-white rounded-lg shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl xl:max-w-2xl">
+  <div className="project-card text-white rounded-lg shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl  xl:max-w-2xl">
     <div className="p-2">
       <div className="mb-4 min-h-[100px]">
         <p className="text-xl font-bold text-white mb-2">{project.title}</p>
         <p className="text-gray-300 text-base">{project.description}</p>
       </div>
       
-      <div className="space-y-2 border-t border-gray-700 pt-4">
-        <div className="card-challenges min-h-[120px]">
+      <div className="space-y-2 border-t border-[#3E3E3E] pt-4">
+        <div className="card-challenges">
           <h5 className="text-md uppercase font-semibold text-gray-200 mb-2">Challenges</h5>
           <p className="text-gray-300 text-base">{project.challenges}</p>
         </div>
         
-        <div className="card-solutions min-h-[120px]">
+        <div className="card-solutions ">
           <h5 className="text-md uppercase font-semibold text-gray-200 mb-2">Solution</h5>
           <p className="text-gray-300 text-base">{project.solution}</p>
         </div>
