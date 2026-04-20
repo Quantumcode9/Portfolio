@@ -66,15 +66,7 @@
   "challenges": "Building performant nested schema supporting deep hierarchies while keeping the UI intuitive despite complex data structures and relationships.",
   "solution": "Implemented recursive MongoDB document structures with strategic indexing and pagination. Designed collapsible sections and breadcrumb navigation for hierarchy clarity and smooth performance at any nesting depth."
 },
-{
-  "id": 8,
-  "title": "Public Domain Finder",
-  "description": "An innovative tool  designed to help writers locate public domain and fair use material for adaptation and creative reinterpretation. Using the Gutendex API, it lets users search thousands of works, find promising sources, and explore adaptation possibilities while staying within copyright limits.",
-  "imageUrl": "/assets/public-domain.png",
-  "technologies": ["Gutendex API", "React", "TypeScript"],
-  "challenges": "Integrating the Gutendex API meant working with large datasets and building efficient search features. Designing an interface that made a massive library feel accessible and relevant to writers required additional care.",
-  "solution": "The interface provides previews and detailed metadata so writers can evaluate material quickly. Caching was added to improve performance, cut down on API calls, and give users faster access to frequently viewed works."
-},
+
 {
   "id": 9,
   "title": "Character Name Generator",
